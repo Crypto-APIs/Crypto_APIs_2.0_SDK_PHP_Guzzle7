@@ -63,7 +63,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
         'api_version' => 'string',
         'request_id' => 'string',
         'context' => 'string',
-        'error' => '\CryptoAPIs\Model\GetExchangeRateByAssetsIDsE422'
+        'error' => '\CryptoAPIs\Model\ListHDWalletXPubYPubZPubUTXOsE422'
     ];
 
     /**
@@ -308,7 +308,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets error
      *
-     * @return \CryptoAPIs\Model\GetExchangeRateByAssetsIDsE422
+     * @return \CryptoAPIs\Model\ListHDWalletXPubYPubZPubUTXOsE422
      */
     public function getError()
     {
@@ -318,7 +318,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets error
      *
-     * @param \CryptoAPIs\Model\GetExchangeRateByAssetsIDsE422 $error error
+     * @param \CryptoAPIs\Model\ListHDWalletXPubYPubZPubUTXOsE422 $error error
      *
      * @return self
      */
@@ -335,7 +335,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -347,6 +347,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -360,7 +361,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -376,7 +377,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -388,6 +389,7 @@ class InlineResponse4225 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

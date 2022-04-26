@@ -128,7 +128,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetAddressDetailsFromCallbackR|\CryptoAPIs\Model\InlineResponse40069|\CryptoAPIs\Model\InlineResponse40169|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40369|\CryptoAPIs\Model\InlineResponse4044|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetAddressDetailsFromCallbackR|\CryptoAPIs\Model\InlineResponse40083|\CryptoAPIs\Model\InlineResponse40183|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40383|\CryptoAPIs\Model\InlineResponse4044|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getAddressDetailsFromCallback($blockchain, $network, $address, $context = null)
     {
@@ -148,7 +148,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetAddressDetailsFromCallbackR|\CryptoAPIs\Model\InlineResponse40069|\CryptoAPIs\Model\InlineResponse40169|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40369|\CryptoAPIs\Model\InlineResponse4044|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetAddressDetailsFromCallbackR|\CryptoAPIs\Model\InlineResponse40083|\CryptoAPIs\Model\InlineResponse40183|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40383|\CryptoAPIs\Model\InlineResponse4044|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAddressDetailsFromCallbackWithHttpInfo($blockchain, $network, $address, $context = null)
     {
@@ -195,6 +195,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetAddressDetailsFromCallbackR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -203,26 +206,32 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40069' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40083' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40083' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40069', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40083', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40169' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40183' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40183' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40169', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40183', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -231,6 +240,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -239,14 +251,17 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40369' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40383' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40383' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40369', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40383', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -255,6 +270,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4044' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -267,6 +285,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -279,6 +300,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -291,6 +315,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -303,6 +330,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -315,6 +345,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -329,6 +362,9 @@ class CallbackDataApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -350,7 +386,7 @@ class CallbackDataApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40069',
+                        '\CryptoAPIs\Model\InlineResponse40083',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -358,7 +394,7 @@ class CallbackDataApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40169',
+                        '\CryptoAPIs\Model\InlineResponse40183',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -374,7 +410,7 @@ class CallbackDataApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40369',
+                        '\CryptoAPIs\Model\InlineResponse40383',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -481,6 +517,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -546,16 +585,13 @@ class CallbackDataApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -616,7 +652,7 @@ class CallbackDataApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -637,7 +673,7 @@ class CallbackDataApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -658,7 +694,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHashFromCallbackR|\CryptoAPIs\Model\InlineResponse40071|\CryptoAPIs\Model\InlineResponse40171|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40371|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHashFromCallbackR|\CryptoAPIs\Model\InlineResponse40085|\CryptoAPIs\Model\InlineResponse40185|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40385|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getBlockDetailsByBlockHashFromCallback($blockchain, $network, $block_hash, $context = null)
     {
@@ -678,7 +714,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHashFromCallbackR|\CryptoAPIs\Model\InlineResponse40071|\CryptoAPIs\Model\InlineResponse40171|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40371|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHashFromCallbackR|\CryptoAPIs\Model\InlineResponse40085|\CryptoAPIs\Model\InlineResponse40185|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40385|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBlockDetailsByBlockHashFromCallbackWithHttpInfo($blockchain, $network, $block_hash, $context = null)
     {
@@ -725,6 +761,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetBlockDetailsByBlockHashFromCallbackR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -733,26 +772,32 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40071' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40085' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40085' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40071', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40085', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40171' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40185' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40185' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40171', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40185', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -761,6 +806,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -769,14 +817,17 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40371' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40385' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40385' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40371', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40385', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -785,6 +836,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -797,6 +851,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -809,6 +866,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -821,6 +881,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -833,6 +896,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -845,6 +911,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -859,6 +928,9 @@ class CallbackDataApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -880,7 +952,7 @@ class CallbackDataApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40071',
+                        '\CryptoAPIs\Model\InlineResponse40085',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -888,7 +960,7 @@ class CallbackDataApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40171',
+                        '\CryptoAPIs\Model\InlineResponse40185',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -904,7 +976,7 @@ class CallbackDataApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40371',
+                        '\CryptoAPIs\Model\InlineResponse40385',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1011,6 +1083,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1076,16 +1151,13 @@ class CallbackDataApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1146,7 +1218,7 @@ class CallbackDataApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1167,7 +1239,7 @@ class CallbackDataApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1188,7 +1260,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHeightFromCallbackR|\CryptoAPIs\Model\InlineResponse40072|\CryptoAPIs\Model\InlineResponse40172|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40372|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHeightFromCallbackR|\CryptoAPIs\Model\InlineResponse40086|\CryptoAPIs\Model\InlineResponse40186|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40386|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getBlockDetailsByBlockHeightFromCallback($blockchain, $network, $block_height, $context = null)
     {
@@ -1208,7 +1280,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHeightFromCallbackR|\CryptoAPIs\Model\InlineResponse40072|\CryptoAPIs\Model\InlineResponse40172|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40372|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHeightFromCallbackR|\CryptoAPIs\Model\InlineResponse40086|\CryptoAPIs\Model\InlineResponse40186|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40386|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBlockDetailsByBlockHeightFromCallbackWithHttpInfo($blockchain, $network, $block_height, $context = null)
     {
@@ -1255,6 +1327,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetBlockDetailsByBlockHeightFromCallbackR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1263,26 +1338,32 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40072' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40086' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40086' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40072', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40086', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40172' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40186' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40186' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40172', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40186', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1291,6 +1372,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1299,14 +1383,17 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40372' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40386' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40386' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40372', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40386', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1315,6 +1402,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1327,6 +1417,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1339,6 +1432,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1351,6 +1447,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1363,6 +1462,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1375,6 +1477,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1389,6 +1494,9 @@ class CallbackDataApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1410,7 +1518,7 @@ class CallbackDataApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40072',
+                        '\CryptoAPIs\Model\InlineResponse40086',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1418,7 +1526,7 @@ class CallbackDataApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40172',
+                        '\CryptoAPIs\Model\InlineResponse40186',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1434,7 +1542,7 @@ class CallbackDataApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40372',
+                        '\CryptoAPIs\Model\InlineResponse40386',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1541,6 +1649,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1606,16 +1717,13 @@ class CallbackDataApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1676,7 +1784,7 @@ class CallbackDataApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1697,7 +1805,7 @@ class CallbackDataApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1718,7 +1826,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackR|\CryptoAPIs\Model\InlineResponse40070|\CryptoAPIs\Model\InlineResponse40170|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40370|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackR|\CryptoAPIs\Model\InlineResponse40084|\CryptoAPIs\Model\InlineResponse40184|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40384|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getTransactionDetailsByTransactionIDFromCallback($blockchain, $network, $transaction_id, $context = null)
     {
@@ -1738,7 +1846,7 @@ class CallbackDataApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackR|\CryptoAPIs\Model\InlineResponse40070|\CryptoAPIs\Model\InlineResponse40170|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40370|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackR|\CryptoAPIs\Model\InlineResponse40084|\CryptoAPIs\Model\InlineResponse40184|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40384|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionDetailsByTransactionIDFromCallbackWithHttpInfo($blockchain, $network, $transaction_id, $context = null)
     {
@@ -1785,6 +1893,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1793,26 +1904,32 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40070' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40084' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40084' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40070', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40084', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40170' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40184' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40184' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40170', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40184', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1821,6 +1938,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1829,14 +1949,17 @@ class CallbackDataApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40370' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40384' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40384' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40370', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40384', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1845,6 +1968,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1857,6 +1983,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1869,6 +1998,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1881,6 +2013,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1893,6 +2028,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1905,6 +2043,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1919,6 +2060,9 @@ class CallbackDataApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1940,7 +2084,7 @@ class CallbackDataApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40070',
+                        '\CryptoAPIs\Model\InlineResponse40084',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1948,7 +2092,7 @@ class CallbackDataApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40170',
+                        '\CryptoAPIs\Model\InlineResponse40184',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1964,7 +2108,7 @@ class CallbackDataApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40370',
+                        '\CryptoAPIs\Model\InlineResponse40384',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2071,6 +2215,9 @@ class CallbackDataApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2136,16 +2283,13 @@ class CallbackDataApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2206,7 +2350,7 @@ class CallbackDataApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2227,7 +2371,7 @@ class CallbackDataApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

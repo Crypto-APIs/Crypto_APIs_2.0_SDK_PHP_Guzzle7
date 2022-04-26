@@ -61,7 +61,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'address' => 'string',
+        'address_tag' => 'int',
         'amount' => 'string',
+        'classic_address' => 'string',
         'unit' => 'string'
     ];
 
@@ -74,7 +76,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'address' => null,
+        'address_tag' => null,
         'amount' => null,
+        'classic_address' => null,
         'unit' => null
     ];
 
@@ -106,7 +110,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'address' => 'address',
+        'address_tag' => 'addressTag',
         'amount' => 'amount',
+        'classic_address' => 'classicAddress',
         'unit' => 'unit'
     ];
 
@@ -117,7 +123,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'address' => 'setAddress',
+        'address_tag' => 'setAddressTag',
         'amount' => 'setAmount',
+        'classic_address' => 'setClassicAddress',
         'unit' => 'setUnit'
     ];
 
@@ -128,7 +136,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'address' => 'getAddress',
+        'address_tag' => 'getAddressTag',
         'amount' => 'getAmount',
+        'classic_address' => 'getClassicAddress',
         'unit' => 'getUnit'
     ];
 
@@ -190,7 +200,9 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
     public function __construct(array $data = null)
     {
         $this->container['address'] = $data['address'] ?? null;
+        $this->container['address_tag'] = $data['address_tag'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['classic_address'] = $data['classic_address'] ?? null;
         $this->container['unit'] = $data['unit'] ?? null;
     }
 
@@ -252,6 +264,30 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets address_tag
+     *
+     * @return int|null
+     */
+    public function getAddressTag()
+    {
+        return $this->container['address_tag'];
+    }
+
+    /**
+     * Sets address_tag
+     *
+     * @param int|null $address_tag Defines a specific Tag that is an additional XRP address feature. It helps identify a transaction recipient beyond a wallet address. The tag that was encoded into the x-Address along with the Classic Address.
+     *
+     * @return self
+     */
+    public function setAddressTag($address_tag)
+    {
+        $this->container['address_tag'] = $address_tag;
+
+        return $this;
+    }
+
+    /**
      * Gets amount
      *
      * @return string
@@ -271,6 +307,30 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets classic_address
+     *
+     * @return string|null
+     */
+    public function getClassicAddress()
+    {
+        return $this->container['classic_address'];
+    }
+
+    /**
+     * Sets classic_address
+     *
+     * @param string|null $classic_address Represents the public address, which is a compressed and shortened form of a public key. A classic address is shown when the destination address is an x-Address.
+     *
+     * @return self
+     */
+    public function setClassicAddress($classic_address)
+    {
+        $this->container['classic_address'] = $classic_address;
 
         return $this;
     }
@@ -305,7 +365,7 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -317,6 +377,7 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -330,7 +391,7 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -346,7 +407,7 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -358,6 +419,7 @@ class GetTransactionRequestDetailsRIRecipients implements ModelInterface, ArrayA
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

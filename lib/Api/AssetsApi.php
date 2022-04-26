@@ -126,7 +126,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetAssetDetailsByAssetIDR|\CryptoAPIs\Model\InlineResponse40090|\CryptoAPIs\Model\InlineResponse40190|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40390|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetAssetDetailsByAssetIDR|\CryptoAPIs\Model\InlineResponse400109|\CryptoAPIs\Model\InlineResponse401109|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403109|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getAssetDetailsByAssetID($asset_id, $context = null)
     {
@@ -144,7 +144,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetAssetDetailsByAssetIDR|\CryptoAPIs\Model\InlineResponse40090|\CryptoAPIs\Model\InlineResponse40190|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40390|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetAssetDetailsByAssetIDR|\CryptoAPIs\Model\InlineResponse400109|\CryptoAPIs\Model\InlineResponse401109|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403109|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssetDetailsByAssetIDWithHttpInfo($asset_id, $context = null)
     {
@@ -191,6 +191,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetAssetDetailsByAssetIDR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -199,26 +202,32 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40090' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse400109' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse400109' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40090', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse400109', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40190' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse401109' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse401109' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40190', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse401109', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -227,6 +236,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -235,14 +247,17 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40390' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse403109' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse403109' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40390', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse403109', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -251,6 +266,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -263,6 +281,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -275,6 +296,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -287,6 +311,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -299,6 +326,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -313,6 +343,9 @@ class AssetsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -334,7 +367,7 @@ class AssetsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40090',
+                        '\CryptoAPIs\Model\InlineResponse400109',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -342,7 +375,7 @@ class AssetsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40190',
+                        '\CryptoAPIs\Model\InlineResponse401109',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -358,7 +391,7 @@ class AssetsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40390',
+                        '\CryptoAPIs\Model\InlineResponse403109',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -453,6 +486,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -504,16 +540,13 @@ class AssetsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -558,7 +591,7 @@ class AssetsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -579,7 +612,7 @@ class AssetsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -598,7 +631,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetAssetDetailsByAssetSymbolR|\CryptoAPIs\Model\InlineResponse40091|\CryptoAPIs\Model\InlineResponse40191|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40391|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetAssetDetailsByAssetSymbolR|\CryptoAPIs\Model\InlineResponse400110|\CryptoAPIs\Model\InlineResponse401110|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403110|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getAssetDetailsByAssetSymbol($asset_symbol, $context = null)
     {
@@ -616,7 +649,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetAssetDetailsByAssetSymbolR|\CryptoAPIs\Model\InlineResponse40091|\CryptoAPIs\Model\InlineResponse40191|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40391|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetAssetDetailsByAssetSymbolR|\CryptoAPIs\Model\InlineResponse400110|\CryptoAPIs\Model\InlineResponse401110|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403110|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssetDetailsByAssetSymbolWithHttpInfo($asset_symbol, $context = null)
     {
@@ -663,6 +696,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetAssetDetailsByAssetSymbolR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -671,26 +707,32 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40091' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse400110' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse400110' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40091', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse400110', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40191' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse401110' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse401110' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40191', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse401110', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -699,6 +741,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -707,14 +752,17 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40391' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse403110' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse403110' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40391', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse403110', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -723,6 +771,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -735,6 +786,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -747,6 +801,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -759,6 +816,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -771,6 +831,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -785,6 +848,9 @@ class AssetsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -806,7 +872,7 @@ class AssetsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40091',
+                        '\CryptoAPIs\Model\InlineResponse400110',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -814,7 +880,7 @@ class AssetsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40191',
+                        '\CryptoAPIs\Model\InlineResponse401110',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -830,7 +896,7 @@ class AssetsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40391',
+                        '\CryptoAPIs\Model\InlineResponse403110',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -925,6 +991,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -976,16 +1045,13 @@ class AssetsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1030,7 +1096,7 @@ class AssetsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1051,7 +1117,7 @@ class AssetsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1074,7 +1140,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListAssetsDetailsR|\CryptoAPIs\Model\InlineResponse40089|\CryptoAPIs\Model\InlineResponse40189|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40389|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListAssetsDetailsR|\CryptoAPIs\Model\InlineResponse400108|\CryptoAPIs\Model\InlineResponse401108|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403108|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listAssetsDetails($context = null, $asset_type = null, $crypto_type = null, $limit = 50, $offset = 0, $waas_enabled = null)
     {
@@ -1096,7 +1162,7 @@ class AssetsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListAssetsDetailsR|\CryptoAPIs\Model\InlineResponse40089|\CryptoAPIs\Model\InlineResponse40189|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40389|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListAssetsDetailsR|\CryptoAPIs\Model\InlineResponse400108|\CryptoAPIs\Model\InlineResponse401108|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse403108|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAssetsDetailsWithHttpInfo($context = null, $asset_type = null, $crypto_type = null, $limit = 50, $offset = 0, $waas_enabled = null)
     {
@@ -1143,6 +1209,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListAssetsDetailsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1151,26 +1220,32 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40089' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse400108' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse400108' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40089', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse400108', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40189' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse401108' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse401108' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40189', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse401108', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1179,6 +1254,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1187,14 +1265,17 @@ class AssetsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40389' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse403108' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse403108' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40389', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse403108', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1203,6 +1284,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1215,6 +1299,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1227,6 +1314,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1239,6 +1329,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1251,6 +1344,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1265,6 +1361,9 @@ class AssetsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1286,7 +1385,7 @@ class AssetsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40089',
+                        '\CryptoAPIs\Model\InlineResponse400108',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1294,7 +1393,7 @@ class AssetsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40189',
+                        '\CryptoAPIs\Model\InlineResponse401108',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1310,7 +1409,7 @@ class AssetsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40389',
+                        '\CryptoAPIs\Model\InlineResponse403108',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1413,6 +1512,9 @@ class AssetsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1462,71 +1564,53 @@ class AssetsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($asset_type !== null) {
-            if('form' === 'form' && is_array($asset_type)) {
-                foreach($asset_type as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['assetType'] = $asset_type;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $asset_type,
+            'assetType', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($crypto_type !== null) {
-            if('form' === 'form' && is_array($crypto_type)) {
-                foreach($crypto_type as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['cryptoType'] = $crypto_type;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $crypto_type,
+            'cryptoType', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($waas_enabled !== null) {
-            if('form' === 'form' && is_array($waas_enabled)) {
-                foreach($waas_enabled as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['waasEnabled'] = $waas_enabled;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $waas_enabled,
+            'waasEnabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
 
@@ -1563,7 +1647,7 @@ class AssetsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1584,7 +1668,7 @@ class AssetsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

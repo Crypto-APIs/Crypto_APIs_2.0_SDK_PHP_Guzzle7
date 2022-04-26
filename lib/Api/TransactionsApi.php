@@ -130,7 +130,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\CreateCoinsTransactionFromAddressForWholeAmountR|\CryptoAPIs\Model\InlineResponse40025|\CryptoAPIs\Model\InlineResponse40125|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40325|\CryptoAPIs\Model\InlineResponse4093|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\CreateCoinsTransactionFromAddressForWholeAmountR|\CryptoAPIs\Model\InlineResponse40026|\CryptoAPIs\Model\InlineResponse40126|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40326|\CryptoAPIs\Model\InlineResponse4093|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function createCoinsTransactionFromAddressForWholeAmount($address, $blockchain, $network, $wallet_id, $context = null, $create_coins_transaction_from_address_for_whole_amount_rb = null)
     {
@@ -152,7 +152,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\CreateCoinsTransactionFromAddressForWholeAmountR|\CryptoAPIs\Model\InlineResponse40025|\CryptoAPIs\Model\InlineResponse40125|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40325|\CryptoAPIs\Model\InlineResponse4093|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\CreateCoinsTransactionFromAddressForWholeAmountR|\CryptoAPIs\Model\InlineResponse40026|\CryptoAPIs\Model\InlineResponse40126|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40326|\CryptoAPIs\Model\InlineResponse4093|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCoinsTransactionFromAddressForWholeAmountWithHttpInfo($address, $blockchain, $network, $wallet_id, $context = null, $create_coins_transaction_from_address_for_whole_amount_rb = null)
     {
@@ -199,6 +199,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\CreateCoinsTransactionFromAddressForWholeAmountR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -207,26 +210,32 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40025' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40026' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40026' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40025', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40026', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40125' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40126' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40126' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40125', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40126', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -235,6 +244,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -243,14 +255,17 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40325' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40326' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40326' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40325', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40326', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -259,6 +274,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4093' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -271,6 +289,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -283,6 +304,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -295,6 +319,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -307,6 +334,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -321,6 +351,9 @@ class TransactionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -342,7 +375,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40025',
+                        '\CryptoAPIs\Model\InlineResponse40026',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -350,7 +383,7 @@ class TransactionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40125',
+                        '\CryptoAPIs\Model\InlineResponse40126',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -366,7 +399,7 @@ class TransactionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40325',
+                        '\CryptoAPIs\Model\InlineResponse40326',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -469,6 +502,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -542,16 +578,13 @@ class TransactionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -626,7 +659,7 @@ class TransactionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -647,7 +680,7 @@ class TransactionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -661,7 +694,7 @@ class TransactionsApi
      *
      * Create Coins Transaction Request from Address
      *
-     * @param  string $address Defines the specific source address for the transaction. (required)
+     * @param  string $address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param  string $wallet_id Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -670,7 +703,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\CreateCoinsTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40020|\CryptoAPIs\Model\InlineResponse40120|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40320|\CryptoAPIs\Model\InlineResponse4092|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\CreateCoinsTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40021|\CryptoAPIs\Model\InlineResponse40121|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40321|\CryptoAPIs\Model\InlineResponse4092|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function createCoinsTransactionRequestFromAddress($address, $blockchain, $network, $wallet_id, $context = null, $create_coins_transaction_request_from_address_rb = null)
     {
@@ -683,7 +716,7 @@ class TransactionsApi
      *
      * Create Coins Transaction Request from Address
      *
-     * @param  string $address Defines the specific source address for the transaction. (required)
+     * @param  string $address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param  string $wallet_id Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -692,7 +725,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\CreateCoinsTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40020|\CryptoAPIs\Model\InlineResponse40120|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40320|\CryptoAPIs\Model\InlineResponse4092|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\CreateCoinsTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40021|\CryptoAPIs\Model\InlineResponse40121|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40321|\CryptoAPIs\Model\InlineResponse4092|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCoinsTransactionRequestFromAddressWithHttpInfo($address, $blockchain, $network, $wallet_id, $context = null, $create_coins_transaction_request_from_address_rb = null)
     {
@@ -739,6 +772,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\CreateCoinsTransactionRequestFromAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -747,26 +783,32 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40020' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40021' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40021' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40020', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40021', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40120' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40121' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40121' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40120', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40121', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -775,6 +817,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -783,14 +828,17 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40320' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40321' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40321' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40320', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40321', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -799,6 +847,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4092' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -811,6 +862,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -823,6 +877,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -835,6 +892,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -847,6 +907,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -861,6 +924,9 @@ class TransactionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -882,7 +948,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40020',
+                        '\CryptoAPIs\Model\InlineResponse40021',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -890,7 +956,7 @@ class TransactionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40120',
+                        '\CryptoAPIs\Model\InlineResponse40121',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -906,7 +972,7 @@ class TransactionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40320',
+                        '\CryptoAPIs\Model\InlineResponse40321',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -961,7 +1027,7 @@ class TransactionsApi
      *
      * Create Coins Transaction Request from Address
      *
-     * @param  string $address Defines the specific source address for the transaction. (required)
+     * @param  string $address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param  string $wallet_id Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -986,7 +1052,7 @@ class TransactionsApi
      *
      * Create Coins Transaction Request from Address
      *
-     * @param  string $address Defines the specific source address for the transaction. (required)
+     * @param  string $address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param  string $wallet_id Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -1009,6 +1075,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1037,7 +1106,7 @@ class TransactionsApi
     /**
      * Create request for operation 'createCoinsTransactionRequestFromAddress'
      *
-     * @param  string $address Defines the specific source address for the transaction. (required)
+     * @param  string $address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param  string $wallet_id Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -1082,16 +1151,13 @@ class TransactionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1166,7 +1232,7 @@ class TransactionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1187,7 +1253,7 @@ class TransactionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1277,6 +1343,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\CreateCoinsTransactionRequestFromWalletR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1289,6 +1358,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40013' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1301,6 +1373,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40113' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1313,6 +1388,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1325,6 +1403,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40313' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1337,6 +1418,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4091' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1349,6 +1433,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1361,6 +1448,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1373,6 +1463,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1385,6 +1478,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1399,6 +1495,9 @@ class TransactionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1545,6 +1644,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1611,16 +1713,13 @@ class TransactionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1687,7 +1786,7 @@ class TransactionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1708,7 +1807,7 @@ class TransactionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1731,7 +1830,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\CreateFungibleTokensTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40036|\CryptoAPIs\Model\InlineResponse40136|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40336|\CryptoAPIs\Model\InlineResponse4094|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\CreateFungibleTokensTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40037|\CryptoAPIs\Model\InlineResponse40137|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40337|\CryptoAPIs\Model\InlineResponse4094|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function createFungibleTokensTransactionRequestFromAddress($blockchain, $network, $sender_address, $wallet_id, $context = null, $create_fungible_tokens_transaction_request_from_address_rb = null)
     {
@@ -1753,7 +1852,7 @@ class TransactionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\CreateFungibleTokensTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40036|\CryptoAPIs\Model\InlineResponse40136|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40336|\CryptoAPIs\Model\InlineResponse4094|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\CreateFungibleTokensTransactionRequestFromAddressR|\CryptoAPIs\Model\InlineResponse40037|\CryptoAPIs\Model\InlineResponse40137|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40337|\CryptoAPIs\Model\InlineResponse4094|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFungibleTokensTransactionRequestFromAddressWithHttpInfo($blockchain, $network, $sender_address, $wallet_id, $context = null, $create_fungible_tokens_transaction_request_from_address_rb = null)
     {
@@ -1800,6 +1899,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\CreateFungibleTokensTransactionRequestFromAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1808,26 +1910,32 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40036' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40037' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40037' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40036', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40037', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40136' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40137' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40137' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40136', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40137', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1836,6 +1944,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1844,14 +1955,17 @@ class TransactionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40336' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40337' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40337' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40336', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40337', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1860,6 +1974,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4094' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1872,6 +1989,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1884,6 +2004,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1896,6 +2019,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1908,6 +2034,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1922,6 +2051,9 @@ class TransactionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1943,7 +2075,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40036',
+                        '\CryptoAPIs\Model\InlineResponse40037',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1951,7 +2083,7 @@ class TransactionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40136',
+                        '\CryptoAPIs\Model\InlineResponse40137',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1967,7 +2099,7 @@ class TransactionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40336',
+                        '\CryptoAPIs\Model\InlineResponse40337',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2070,6 +2202,9 @@ class TransactionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2143,16 +2278,13 @@ class TransactionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2227,7 +2359,7 @@ class TransactionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2248,7 +2380,7 @@ class TransactionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

@@ -291,7 +291,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets callback_url
      *
-     * @param string $callback_url Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
+     * @param string $callback_url Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. `We support ONLY httpS type of protocol`.
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -344,6 +344,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -357,7 +358,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -373,7 +374,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -385,6 +386,7 @@ class MinedTransactionRBDataItem implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

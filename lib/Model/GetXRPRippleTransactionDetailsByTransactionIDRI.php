@@ -87,7 +87,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
       */
     protected static $openAPIFormats = [
         'additional_data' => null,
-        'destination_tag' => null,
+        'destination_tag' => 'int64',
         'index' => null,
         'mined_in_block_hash' => null,
         'mined_in_block_height' => null,
@@ -95,7 +95,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
         'receive' => null,
         'recipients' => null,
         'senders' => null,
-        'sequence' => null,
+        'sequence' => 'int64',
         'status' => null,
         'timestamp' => null,
         'transaction_hash' => null,
@@ -728,7 +728,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -740,6 +740,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -753,7 +754,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -769,7 +770,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -781,6 +782,7 @@ class GetXRPRippleTransactionDetailsByTransactionIDRI implements ModelInterface,
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

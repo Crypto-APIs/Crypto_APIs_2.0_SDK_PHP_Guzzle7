@@ -126,7 +126,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetLatestMinedZilliqaBlockR|\CryptoAPIs\Model\InlineResponse40040|\CryptoAPIs\Model\InlineResponse40140|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40340|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetLatestMinedZilliqaBlockR|\CryptoAPIs\Model\InlineResponse40043|\CryptoAPIs\Model\InlineResponse40143|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40343|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getLatestMinedZilliqaBlock($network, $context = null)
     {
@@ -144,7 +144,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetLatestMinedZilliqaBlockR|\CryptoAPIs\Model\InlineResponse40040|\CryptoAPIs\Model\InlineResponse40140|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40340|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetLatestMinedZilliqaBlockR|\CryptoAPIs\Model\InlineResponse40043|\CryptoAPIs\Model\InlineResponse40143|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40343|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLatestMinedZilliqaBlockWithHttpInfo($network, $context = null)
     {
@@ -191,6 +191,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetLatestMinedZilliqaBlockR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -199,26 +202,32 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40040' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40043' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40043' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40040', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40043', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40140' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40143' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40143' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40140', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40143', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -227,6 +236,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -235,14 +247,17 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40340' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40343' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40343' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40340', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40343', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -251,6 +266,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -263,6 +281,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -275,6 +296,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -287,6 +311,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -299,6 +326,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -311,6 +341,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -325,6 +358,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -346,7 +382,7 @@ class ZilliqaApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40040',
+                        '\CryptoAPIs\Model\InlineResponse40043',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -354,7 +390,7 @@ class ZilliqaApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40140',
+                        '\CryptoAPIs\Model\InlineResponse40143',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -370,7 +406,7 @@ class ZilliqaApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40340',
+                        '\CryptoAPIs\Model\InlineResponse40343',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,6 +509,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -524,16 +563,13 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -578,7 +614,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -599,7 +635,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -685,6 +721,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetZilliqaAddressDetailsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -697,6 +736,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4003' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -709,6 +751,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4013' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -721,6 +766,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -733,6 +781,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4033' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -745,6 +796,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -757,6 +811,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -769,6 +826,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -781,6 +841,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -793,6 +856,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -807,6 +873,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -949,6 +1018,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1007,16 +1079,13 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1069,7 +1138,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1090,7 +1159,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1110,7 +1179,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40033|\CryptoAPIs\Model\InlineResponse40133|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40333|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40034|\CryptoAPIs\Model\InlineResponse40134|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40334|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getZilliqaBlockDetailsByBlockHash($network, $block_hash, $context = null)
     {
@@ -1129,7 +1198,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40033|\CryptoAPIs\Model\InlineResponse40133|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40333|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40034|\CryptoAPIs\Model\InlineResponse40134|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40334|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getZilliqaBlockDetailsByBlockHashWithHttpInfo($network, $block_hash, $context = null)
     {
@@ -1176,6 +1245,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1184,26 +1256,32 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40033' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40034' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40034' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40033', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40034', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40133' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40134' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40134' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40133', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40134', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1212,6 +1290,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1220,14 +1301,17 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40333' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40334' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40334' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40333', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40334', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1236,6 +1320,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1248,6 +1335,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1260,6 +1350,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1272,6 +1365,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1284,6 +1380,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1296,6 +1395,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1310,6 +1412,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1331,7 +1436,7 @@ class ZilliqaApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40033',
+                        '\CryptoAPIs\Model\InlineResponse40034',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1339,7 +1444,7 @@ class ZilliqaApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40133',
+                        '\CryptoAPIs\Model\InlineResponse40134',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1355,7 +1460,7 @@ class ZilliqaApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40333',
+                        '\CryptoAPIs\Model\InlineResponse40334',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1460,6 +1565,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1518,16 +1626,13 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1580,7 +1685,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1601,7 +1706,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1621,7 +1726,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40029|\CryptoAPIs\Model\InlineResponse40129|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40329|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40030|\CryptoAPIs\Model\InlineResponse40130|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40330|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getZilliqaBlockDetailsByBlockHeight($network, $block_height, $context = null)
     {
@@ -1640,7 +1745,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40029|\CryptoAPIs\Model\InlineResponse40129|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40329|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40030|\CryptoAPIs\Model\InlineResponse40130|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40330|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getZilliqaBlockDetailsByBlockHeightWithHttpInfo($network, $block_height, $context = null)
     {
@@ -1687,6 +1792,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetZilliqaBlockDetailsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1695,26 +1803,32 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40029' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40030' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40030' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40029', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40030', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40129' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40130' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40130' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40129', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40130', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1723,6 +1837,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1731,14 +1848,17 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40329' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40330' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40330' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40329', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40330', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1747,6 +1867,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1759,6 +1882,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1771,6 +1897,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1783,6 +1912,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1795,6 +1927,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1807,6 +1942,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1821,6 +1959,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1842,7 +1983,7 @@ class ZilliqaApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40029',
+                        '\CryptoAPIs\Model\InlineResponse40030',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1850,7 +1991,7 @@ class ZilliqaApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40129',
+                        '\CryptoAPIs\Model\InlineResponse40130',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1866,7 +2007,7 @@ class ZilliqaApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40329',
+                        '\CryptoAPIs\Model\InlineResponse40330',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1971,6 +2112,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2029,16 +2173,13 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2091,7 +2232,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2112,7 +2253,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2198,6 +2339,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetZilliqaTransactionDetailsByTransactionIDR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2210,6 +2354,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4009' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2222,6 +2369,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4019' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2234,6 +2384,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2246,6 +2399,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4039' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2258,6 +2414,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse404' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2270,6 +2429,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2282,6 +2444,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2294,6 +2459,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2306,6 +2474,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2318,6 +2489,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2332,6 +2506,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -2482,6 +2659,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2540,16 +2720,13 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2602,7 +2779,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2623,7 +2800,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2713,6 +2890,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListZilliqaTransactionsByAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2725,6 +2905,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40014' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2737,6 +2920,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40114' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2749,6 +2935,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2761,6 +2950,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40314' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2773,6 +2965,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2785,6 +2980,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2797,6 +2995,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2809,6 +3010,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2821,6 +3025,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2835,6 +3042,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -2981,6 +3191,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3041,38 +3254,29 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3125,7 +3329,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3146,7 +3350,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3168,7 +3372,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40021|\CryptoAPIs\Model\InlineResponse40121|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40321|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40022|\CryptoAPIs\Model\InlineResponse40122|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40322|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listZilliqaTransactionsByBlockHash($network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -3189,7 +3393,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40021|\CryptoAPIs\Model\InlineResponse40121|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40321|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40022|\CryptoAPIs\Model\InlineResponse40122|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40322|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listZilliqaTransactionsByBlockHashWithHttpInfo($network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -3236,6 +3440,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListZilliqaTransactionsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3244,26 +3451,32 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40021' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40022' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40022' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40021', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40022', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40121' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40122' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40122' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40121', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40122', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3272,6 +3485,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3280,14 +3496,17 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40321' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40322' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40322' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40321', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40322', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3296,6 +3515,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3308,6 +3530,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3320,6 +3545,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3332,6 +3560,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3344,6 +3575,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3358,6 +3592,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3379,7 +3616,7 @@ class ZilliqaApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40021',
+                        '\CryptoAPIs\Model\InlineResponse40022',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3387,7 +3624,7 @@ class ZilliqaApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40121',
+                        '\CryptoAPIs\Model\InlineResponse40122',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3403,7 +3640,7 @@ class ZilliqaApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40321',
+                        '\CryptoAPIs\Model\InlineResponse40322',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3504,6 +3741,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3564,38 +3804,29 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3648,7 +3879,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3669,7 +3900,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3691,7 +3922,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40022|\CryptoAPIs\Model\InlineResponse40122|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40322|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40023|\CryptoAPIs\Model\InlineResponse40123|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40323|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listZilliqaTransactionsByBlockHeight($network, $block_height, $context = null, $limit = 50, $offset = 0)
     {
@@ -3712,7 +3943,7 @@ class ZilliqaApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40022|\CryptoAPIs\Model\InlineResponse40122|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40322|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListZilliqaTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40023|\CryptoAPIs\Model\InlineResponse40123|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40323|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listZilliqaTransactionsByBlockHeightWithHttpInfo($network, $block_height, $context = null, $limit = 50, $offset = 0)
     {
@@ -3759,6 +3990,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListZilliqaTransactionsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3767,26 +4001,32 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40022' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40023' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40023' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40022', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40023', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40122' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40123' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40123' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40122', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40123', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3795,6 +4035,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3803,14 +4046,17 @@ class ZilliqaApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40322' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40323' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40323' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40322', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40323', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3819,6 +4065,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3831,6 +4080,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3843,6 +4095,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3855,6 +4110,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3867,6 +4125,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3881,6 +4142,9 @@ class ZilliqaApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3902,7 +4166,7 @@ class ZilliqaApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40022',
+                        '\CryptoAPIs\Model\InlineResponse40023',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3910,7 +4174,7 @@ class ZilliqaApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40122',
+                        '\CryptoAPIs\Model\InlineResponse40123',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3926,7 +4190,7 @@ class ZilliqaApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40322',
+                        '\CryptoAPIs\Model\InlineResponse40323',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4027,6 +4291,9 @@ class ZilliqaApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4087,38 +4354,29 @@ class ZilliqaApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -4171,7 +4429,7 @@ class ZilliqaApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -4192,7 +4450,7 @@ class ZilliqaApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

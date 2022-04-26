@@ -428,7 +428,7 @@ class ListAllUnconfirmedTransactionsRIBSBVin implements ModelInterface, ArrayAcc
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -440,6 +440,7 @@ class ListAllUnconfirmedTransactionsRIBSBVin implements ModelInterface, ArrayAcc
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -453,7 +454,7 @@ class ListAllUnconfirmedTransactionsRIBSBVin implements ModelInterface, ArrayAcc
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,7 +470,7 @@ class ListAllUnconfirmedTransactionsRIBSBVin implements ModelInterface, ArrayAcc
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -481,6 +482,7 @@ class ListAllUnconfirmedTransactionsRIBSBVin implements ModelInterface, ArrayAcc
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

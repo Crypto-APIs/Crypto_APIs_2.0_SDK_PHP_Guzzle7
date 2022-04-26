@@ -70,7 +70,8 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         'token_type' => 'string',
         'tokens_amount' => 'string',
         'transaction_hash' => 'string',
-        'transaction_timestamp' => 'int'
+        'transaction_timestamp' => 'int',
+        'transaction_fee' => '\CryptoAPIs\Model\ListTokensTransfersByTransactionHashRITransactionFee'
     ];
 
     /**
@@ -91,7 +92,8 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         'token_type' => null,
         'tokens_amount' => null,
         'transaction_hash' => null,
-        'transaction_timestamp' => null
+        'transaction_timestamp' => null,
+        'transaction_fee' => null
     ];
 
     /**
@@ -131,7 +133,8 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         'token_type' => 'tokenType',
         'tokens_amount' => 'tokensAmount',
         'transaction_hash' => 'transactionHash',
-        'transaction_timestamp' => 'transactionTimestamp'
+        'transaction_timestamp' => 'transactionTimestamp',
+        'transaction_fee' => 'transactionFee'
     ];
 
     /**
@@ -150,7 +153,8 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         'token_type' => 'setTokenType',
         'tokens_amount' => 'setTokensAmount',
         'transaction_hash' => 'setTransactionHash',
-        'transaction_timestamp' => 'setTransactionTimestamp'
+        'transaction_timestamp' => 'setTransactionTimestamp',
+        'transaction_fee' => 'setTransactionFee'
     ];
 
     /**
@@ -169,7 +173,8 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         'token_type' => 'getTokenType',
         'tokens_amount' => 'getTokensAmount',
         'transaction_hash' => 'getTransactionHash',
-        'transaction_timestamp' => 'getTransactionTimestamp'
+        'transaction_timestamp' => 'getTransactionTimestamp',
+        'transaction_fee' => 'getTransactionFee'
     ];
 
     /**
@@ -240,6 +245,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         $this->container['tokens_amount'] = $data['tokens_amount'] ?? null;
         $this->container['transaction_hash'] = $data['transaction_hash'] ?? null;
         $this->container['transaction_timestamp'] = $data['transaction_timestamp'] ?? null;
+        $this->container['transaction_fee'] = $data['transaction_fee'] ?? null;
     }
 
     /**
@@ -283,6 +289,9 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
         }
         if ($this->container['transaction_timestamp'] === null) {
             $invalidProperties[] = "'transaction_timestamp' can't be null";
+        }
+        if ($this->container['transaction_fee'] === null) {
+            $invalidProperties[] = "'transaction_fee' can't be null";
         }
         return $invalidProperties;
     }
@@ -562,6 +571,30 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
 
         return $this;
     }
+
+    /**
+     * Gets transaction_fee
+     *
+     * @return \CryptoAPIs\Model\ListTokensTransfersByTransactionHashRITransactionFee
+     */
+    public function getTransactionFee()
+    {
+        return $this->container['transaction_fee'];
+    }
+
+    /**
+     * Sets transaction_fee
+     *
+     * @param \CryptoAPIs\Model\ListTokensTransfersByTransactionHashRITransactionFee $transaction_fee transaction_fee
+     *
+     * @return self
+     */
+    public function setTransactionFee($transaction_fee)
+    {
+        $this->container['transaction_fee'] = $transaction_fee;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -569,7 +602,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -581,6 +614,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -594,7 +628,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -610,7 +644,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -622,6 +656,7 @@ class ListTokensTransfersByTransactionHashRI implements ModelInterface, ArrayAcc
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

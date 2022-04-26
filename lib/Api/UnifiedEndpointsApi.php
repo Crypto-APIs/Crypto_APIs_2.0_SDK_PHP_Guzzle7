@@ -117,6 +117,579 @@ class UnifiedEndpointsApi
     }
 
     /**
+     * Operation estimateTransactionSmartFee
+     *
+     * Estimate Transaction Smart Fee
+     *
+     * @param  string $blockchain blockchain (required)
+     * @param  string $network network (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $confirmation_target Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param  string $estimate_mode String representation of the address (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\EstimateTransactionSmartFeeR|\CryptoAPIs\Model\InlineResponse40068|\CryptoAPIs\Model\InlineResponse40168|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40368|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500|\CryptoAPIs\Model\InlineResponse501
+     */
+    public function estimateTransactionSmartFee($blockchain, $network, $context = null, $confirmation_target = null, $estimate_mode = null)
+    {
+        list($response) = $this->estimateTransactionSmartFeeWithHttpInfo($blockchain, $network, $context, $confirmation_target, $estimate_mode);
+        return $response;
+    }
+
+    /**
+     * Operation estimateTransactionSmartFeeWithHttpInfo
+     *
+     * Estimate Transaction Smart Fee
+     *
+     * @param  string $blockchain (required)
+     * @param  string $network (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $confirmation_target Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param  string $estimate_mode String representation of the address (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\EstimateTransactionSmartFeeR|\CryptoAPIs\Model\InlineResponse40068|\CryptoAPIs\Model\InlineResponse40168|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40368|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500|\CryptoAPIs\Model\InlineResponse501, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function estimateTransactionSmartFeeWithHttpInfo($blockchain, $network, $context = null, $confirmation_target = null, $estimate_mode = null)
+    {
+        $request = $this->estimateTransactionSmartFeeRequest($blockchain, $network, $context, $confirmation_target, $estimate_mode);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\EstimateTransactionSmartFeeR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\EstimateTransactionSmartFeeR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\EstimateTransactionSmartFeeR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40068' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40068' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40068', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40168' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40168' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40168', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40368' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40368' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40368', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 501:
+                    if ('\CryptoAPIs\Model\InlineResponse501' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse501' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse501', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\EstimateTransactionSmartFeeR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\EstimateTransactionSmartFeeR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40068',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40168',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40368',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 501:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse501',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation estimateTransactionSmartFeeAsync
+     *
+     * Estimate Transaction Smart Fee
+     *
+     * @param  string $blockchain (required)
+     * @param  string $network (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $confirmation_target Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param  string $estimate_mode String representation of the address (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function estimateTransactionSmartFeeAsync($blockchain, $network, $context = null, $confirmation_target = null, $estimate_mode = null)
+    {
+        return $this->estimateTransactionSmartFeeAsyncWithHttpInfo($blockchain, $network, $context, $confirmation_target, $estimate_mode)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation estimateTransactionSmartFeeAsyncWithHttpInfo
+     *
+     * Estimate Transaction Smart Fee
+     *
+     * @param  string $blockchain (required)
+     * @param  string $network (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $confirmation_target Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param  string $estimate_mode String representation of the address (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function estimateTransactionSmartFeeAsyncWithHttpInfo($blockchain, $network, $context = null, $confirmation_target = null, $estimate_mode = null)
+    {
+        $returnType = '\CryptoAPIs\Model\EstimateTransactionSmartFeeR';
+        $request = $this->estimateTransactionSmartFeeRequest($blockchain, $network, $context, $confirmation_target, $estimate_mode);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'estimateTransactionSmartFee'
+     *
+     * @param  string $blockchain (required)
+     * @param  string $network (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $confirmation_target Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param  string $estimate_mode String representation of the address (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function estimateTransactionSmartFeeRequest($blockchain, $network, $context = null, $confirmation_target = null, $estimate_mode = null)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling estimateTransactionSmartFee'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling estimateTransactionSmartFee'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/estimate-transaction-smart-fee';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $confirmation_target,
+            'confirmationTarget', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $estimate_mode,
+            'estimateMode', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getAddressDetails
      *
      * Get Address Details
@@ -195,6 +768,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetAddressDetailsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -207,6 +783,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse400' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -219,6 +798,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse401' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -231,6 +813,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -243,6 +828,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse403' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -255,6 +843,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -267,6 +858,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -279,6 +873,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -291,6 +888,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -303,6 +903,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -317,6 +920,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -461,6 +1067,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -526,16 +1135,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -596,7 +1202,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -617,7 +1223,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -638,7 +1244,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40030|\CryptoAPIs\Model\InlineResponse40130|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40330|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40031|\CryptoAPIs\Model\InlineResponse40131|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40331|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getBlockDetailsByBlockHash($blockchain, $network, $block_hash, $context = null)
     {
@@ -658,7 +1264,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40030|\CryptoAPIs\Model\InlineResponse40130|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40330|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40031|\CryptoAPIs\Model\InlineResponse40131|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40331|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBlockDetailsByBlockHashWithHttpInfo($blockchain, $network, $block_hash, $context = null)
     {
@@ -705,6 +1311,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetBlockDetailsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -713,26 +1322,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40030' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40031' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40031' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40030', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40031', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40130' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40131' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40131' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40130', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40131', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -741,6 +1356,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -749,14 +1367,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40330' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40331' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40331' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40330', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40331', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -765,6 +1386,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -777,6 +1401,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -789,6 +1416,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -801,6 +1431,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -813,6 +1446,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -825,6 +1461,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -839,6 +1478,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -860,7 +1502,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40030',
+                        '\CryptoAPIs\Model\InlineResponse40031',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -868,7 +1510,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40130',
+                        '\CryptoAPIs\Model\InlineResponse40131',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -884,7 +1526,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40330',
+                        '\CryptoAPIs\Model\InlineResponse40331',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,6 +1633,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1056,16 +1701,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1126,7 +1768,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1147,7 +1789,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1168,7 +1810,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40026|\CryptoAPIs\Model\InlineResponse40126|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40326|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40027|\CryptoAPIs\Model\InlineResponse40127|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40327|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getBlockDetailsByBlockHeight($blockchain, $network, $height, $context = null)
     {
@@ -1188,7 +1830,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40026|\CryptoAPIs\Model\InlineResponse40126|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40326|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40027|\CryptoAPIs\Model\InlineResponse40127|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40327|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBlockDetailsByBlockHeightWithHttpInfo($blockchain, $network, $height, $context = null)
     {
@@ -1235,6 +1877,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetBlockDetailsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1243,26 +1888,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40026' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40027' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40027' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40026', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40027', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40126' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40127' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40127' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40126', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40127', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1271,6 +1922,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1279,14 +1933,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40326' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40327' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40327' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40326', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40327', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1295,6 +1952,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1307,6 +1967,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1319,6 +1982,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1331,6 +1997,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1343,6 +2012,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1355,6 +2027,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1369,6 +2044,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1390,7 +2068,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40026',
+                        '\CryptoAPIs\Model\InlineResponse40027',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1398,7 +2076,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40126',
+                        '\CryptoAPIs\Model\InlineResponse40127',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1414,7 +2092,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40326',
+                        '\CryptoAPIs\Model\InlineResponse40327',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1521,6 +2199,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1586,16 +2267,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1656,7 +2334,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1677,7 +2355,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1697,7 +2375,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetFeeRecommendationsR|\CryptoAPIs\Model\InlineResponse40053|\CryptoAPIs\Model\InlineResponse40153|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40353|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetFeeRecommendationsR|\CryptoAPIs\Model\InlineResponse40057|\CryptoAPIs\Model\InlineResponse40157|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40357|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getFeeRecommendations($blockchain, $network, $context = null)
     {
@@ -1716,7 +2394,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetFeeRecommendationsR|\CryptoAPIs\Model\InlineResponse40053|\CryptoAPIs\Model\InlineResponse40153|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40353|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetFeeRecommendationsR|\CryptoAPIs\Model\InlineResponse40057|\CryptoAPIs\Model\InlineResponse40157|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40357|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeeRecommendationsWithHttpInfo($blockchain, $network, $context = null)
     {
@@ -1763,6 +2441,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetFeeRecommendationsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1771,26 +2452,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40053' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40057' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40057' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40053', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40057', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40153' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40157' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40157' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40153', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40157', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1799,6 +2486,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1807,14 +2497,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40353' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40357' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40357' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40353', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40357', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1823,6 +2516,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1835,6 +2531,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1847,6 +2546,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1859,6 +2561,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1871,6 +2576,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1883,6 +2591,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1897,6 +2608,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1918,7 +2632,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40053',
+                        '\CryptoAPIs\Model\InlineResponse40057',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1926,7 +2640,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40153',
+                        '\CryptoAPIs\Model\InlineResponse40157',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1942,7 +2656,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40353',
+                        '\CryptoAPIs\Model\InlineResponse40357',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2047,6 +2761,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2105,16 +2822,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2167,7 +2881,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2188,7 +2902,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2208,7 +2922,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetLastMinedBlockR|\CryptoAPIs\Model\InlineResponse40037|\CryptoAPIs\Model\InlineResponse40137|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40337|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetLastMinedBlockR|\CryptoAPIs\Model\InlineResponse40040|\CryptoAPIs\Model\InlineResponse40140|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40340|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getLastMinedBlock($blockchain, $network, $context = null)
     {
@@ -2227,7 +2941,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetLastMinedBlockR|\CryptoAPIs\Model\InlineResponse40037|\CryptoAPIs\Model\InlineResponse40137|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40337|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetLastMinedBlockR|\CryptoAPIs\Model\InlineResponse40040|\CryptoAPIs\Model\InlineResponse40140|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40340|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLastMinedBlockWithHttpInfo($blockchain, $network, $context = null)
     {
@@ -2274,6 +2988,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetLastMinedBlockR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2282,26 +2999,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40037' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40040' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40040' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40037', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40040', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40137' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40140' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40140' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40137', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40140', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2310,6 +3033,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2318,14 +3044,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40337' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40340' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40340' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40337', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40340', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2334,6 +3063,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2346,6 +3078,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2358,6 +3093,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2370,6 +3108,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2382,6 +3123,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2394,6 +3138,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2408,6 +3155,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -2429,7 +3179,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40037',
+                        '\CryptoAPIs\Model\InlineResponse40040',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2437,7 +3187,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40137',
+                        '\CryptoAPIs\Model\InlineResponse40140',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2453,7 +3203,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40337',
+                        '\CryptoAPIs\Model\InlineResponse40340',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2558,6 +3308,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2616,16 +3369,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2678,7 +3428,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2699,7 +3449,1116 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getNextAvailableNonce
+     *
+     * Get Next Available Nonce
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\GetNextAvailableNonceR|\CryptoAPIs\Model\InlineResponse40058|\CryptoAPIs\Model\InlineResponse40158|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40358|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function getNextAvailableNonce($blockchain, $network, $address, $context = null)
+    {
+        list($response) = $this->getNextAvailableNonceWithHttpInfo($blockchain, $network, $address, $context);
+        return $response;
+    }
+
+    /**
+     * Operation getNextAvailableNonceWithHttpInfo
+     *
+     * Get Next Available Nonce
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\GetNextAvailableNonceR|\CryptoAPIs\Model\InlineResponse40058|\CryptoAPIs\Model\InlineResponse40158|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40358|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getNextAvailableNonceWithHttpInfo($blockchain, $network, $address, $context = null)
+    {
+        $request = $this->getNextAvailableNonceRequest($blockchain, $network, $address, $context);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\GetNextAvailableNonceR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetNextAvailableNonceR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\GetNextAvailableNonceR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40058' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40058' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40058', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40158' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40158' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40158', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40358' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40358' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40358', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\GetNextAvailableNonceR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\GetNextAvailableNonceR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40058',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40158',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40358',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getNextAvailableNonceAsync
+     *
+     * Get Next Available Nonce
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getNextAvailableNonceAsync($blockchain, $network, $address, $context = null)
+    {
+        return $this->getNextAvailableNonceAsyncWithHttpInfo($blockchain, $network, $address, $context)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getNextAvailableNonceAsyncWithHttpInfo
+     *
+     * Get Next Available Nonce
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getNextAvailableNonceAsyncWithHttpInfo($blockchain, $network, $address, $context = null)
+    {
+        $returnType = '\CryptoAPIs\Model\GetNextAvailableNonceR';
+        $request = $this->getNextAvailableNonceRequest($blockchain, $network, $address, $context);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getNextAvailableNonce'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getNextAvailableNonceRequest($blockchain, $network, $address, $context = null)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling getNextAvailableNonce'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling getNextAvailableNonce'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling getNextAvailableNonce'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/addresses/{address}/next-available-nonce';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getRawTransactionData
+     *
+     * Get Raw Transaction Data
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $transaction_id Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\GetRawTransactionDataR|\CryptoAPIs\Model\InlineResponse40065|\CryptoAPIs\Model\InlineResponse40165|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40365|\CryptoAPIs\Model\InlineResponse404|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function getRawTransactionData($blockchain, $network, $transaction_id, $context = null)
+    {
+        list($response) = $this->getRawTransactionDataWithHttpInfo($blockchain, $network, $transaction_id, $context);
+        return $response;
+    }
+
+    /**
+     * Operation getRawTransactionDataWithHttpInfo
+     *
+     * Get Raw Transaction Data
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $transaction_id Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\GetRawTransactionDataR|\CryptoAPIs\Model\InlineResponse40065|\CryptoAPIs\Model\InlineResponse40165|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40365|\CryptoAPIs\Model\InlineResponse404|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getRawTransactionDataWithHttpInfo($blockchain, $network, $transaction_id, $context = null)
+    {
+        $request = $this->getRawTransactionDataRequest($blockchain, $network, $transaction_id, $context);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\GetRawTransactionDataR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetRawTransactionDataR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\GetRawTransactionDataR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40065' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40065' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40065', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40165' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40165' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40165', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40365' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40365' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40365', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\CryptoAPIs\Model\InlineResponse404' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse404' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse404', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\GetRawTransactionDataR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\GetRawTransactionDataR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40065',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40165',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40365',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse404',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getRawTransactionDataAsync
+     *
+     * Get Raw Transaction Data
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $transaction_id Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRawTransactionDataAsync($blockchain, $network, $transaction_id, $context = null)
+    {
+        return $this->getRawTransactionDataAsyncWithHttpInfo($blockchain, $network, $transaction_id, $context)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getRawTransactionDataAsyncWithHttpInfo
+     *
+     * Get Raw Transaction Data
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $transaction_id Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRawTransactionDataAsyncWithHttpInfo($blockchain, $network, $transaction_id, $context = null)
+    {
+        $returnType = '\CryptoAPIs\Model\GetRawTransactionDataR';
+        $request = $this->getRawTransactionDataRequest($blockchain, $network, $transaction_id, $context);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getRawTransactionData'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $transaction_id Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getRawTransactionDataRequest($blockchain, $network, $transaction_id, $context = null)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling getRawTransactionData'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling getRawTransactionData'
+            );
+        }
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null || (is_array($transaction_id) && count($transaction_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $transaction_id when calling getRawTransactionData'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/transactions/{transactionId}/raw-data';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($transaction_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'transactionId' . '}',
+                ObjectSerializer::toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2787,6 +4646,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2799,6 +4661,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4004' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2811,6 +4676,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4014' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2823,6 +4691,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2835,6 +4706,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4034' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2847,6 +4721,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse404' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2859,6 +4736,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2871,6 +4751,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2883,6 +4766,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2895,6 +4781,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2907,6 +4796,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2921,6 +4813,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3073,6 +4968,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3138,16 +5036,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3208,7 +5103,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3229,7 +5124,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3251,7 +5146,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListAllUnconfirmedTransactionsR|\CryptoAPIs\Model\InlineResponse40016|\CryptoAPIs\Model\InlineResponse40116|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40316|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListAllUnconfirmedTransactionsR|\CryptoAPIs\Model\InlineResponse40017|\CryptoAPIs\Model\InlineResponse40117|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40317|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listAllUnconfirmedTransactions($blockchain, $network, $context = null, $limit = 50, $offset = 0)
     {
@@ -3272,7 +5167,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListAllUnconfirmedTransactionsR|\CryptoAPIs\Model\InlineResponse40016|\CryptoAPIs\Model\InlineResponse40116|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40316|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListAllUnconfirmedTransactionsR|\CryptoAPIs\Model\InlineResponse40017|\CryptoAPIs\Model\InlineResponse40117|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40317|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAllUnconfirmedTransactionsWithHttpInfo($blockchain, $network, $context = null, $limit = 50, $offset = 0)
     {
@@ -3319,6 +5214,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListAllUnconfirmedTransactionsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3327,26 +5225,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40016' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40017' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40017' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40016', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40017', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40116' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40117' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40117' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40116', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40117', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3355,6 +5259,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3363,14 +5270,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40316' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40317' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40317' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40316', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40317', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3379,6 +5289,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3391,6 +5304,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3403,6 +5319,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3415,6 +5334,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3427,6 +5349,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3441,6 +5366,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3462,7 +5390,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40016',
+                        '\CryptoAPIs\Model\InlineResponse40017',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3470,7 +5398,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40116',
+                        '\CryptoAPIs\Model\InlineResponse40117',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3486,7 +5414,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40316',
+                        '\CryptoAPIs\Model\InlineResponse40317',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3587,6 +5515,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3647,38 +5578,29 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3731,7 +5653,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3752,7 +5674,614 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listConfirmedTokensTransfersByAddressAndTimeRange
+     *
+     * List Confirmed Tokens Transfers By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40062|\CryptoAPIs\Model\InlineResponse40162|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40362|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function listConfirmedTokensTransfersByAddressAndTimeRange($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        list($response) = $this->listConfirmedTokensTransfersByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation listConfirmedTokensTransfersByAddressAndTimeRangeWithHttpInfo
+     *
+     * List Confirmed Tokens Transfers By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40062|\CryptoAPIs\Model\InlineResponse40162|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40362|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listConfirmedTokensTransfersByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $request = $this->listConfirmedTokensTransfersByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40062' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40062' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40062', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40162' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40162' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40162', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40362' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40362' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40362', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40062',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40162',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40362',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listConfirmedTokensTransfersByAddressAndTimeRangeAsync
+     *
+     * List Confirmed Tokens Transfers By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConfirmedTokensTransfersByAddressAndTimeRangeAsync($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        return $this->listConfirmedTokensTransfersByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listConfirmedTokensTransfersByAddressAndTimeRangeAsyncWithHttpInfo
+     *
+     * List Confirmed Tokens Transfers By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConfirmedTokensTransfersByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $returnType = '\CryptoAPIs\Model\ListConfirmedTokensTransfersByAddressAndTimeRangeR';
+        $request = $this->listConfirmedTokensTransfersByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listConfirmedTokensTransfersByAddressAndTimeRange'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listConfirmedTokensTransfersByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling listConfirmedTokensTransfersByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling listConfirmedTokensTransfersByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling listConfirmedTokensTransfersByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'from_timestamp' is set
+        if ($from_timestamp === null || (is_array($from_timestamp) && count($from_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $from_timestamp when calling listConfirmedTokensTransfersByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'to_timestamp' is set
+        if ($to_timestamp === null || (is_array($to_timestamp) && count($to_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_timestamp when calling listConfirmedTokensTransfersByAddressAndTimeRange'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers-by-time-range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_timestamp,
+            'fromTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_timestamp,
+            'toTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3844,6 +6373,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListConfirmedTransactionsByAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3856,6 +6388,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40010' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3868,6 +6403,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40110' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3880,6 +6418,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3892,6 +6433,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40310' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3904,6 +6448,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3916,6 +6463,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3928,6 +6478,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3940,6 +6493,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3952,6 +6508,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3966,6 +6525,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -4114,6 +6676,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4181,38 +6746,29 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -4273,7 +6829,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -4294,7 +6850,1221 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listConfirmedTransactionsByAddressAndTimeRange
+     *
+     * List Confirmed Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40061|\CryptoAPIs\Model\InlineResponse40161|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40361|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function listConfirmedTransactionsByAddressAndTimeRange($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        list($response) = $this->listConfirmedTransactionsByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation listConfirmedTransactionsByAddressAndTimeRangeWithHttpInfo
+     *
+     * List Confirmed Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40061|\CryptoAPIs\Model\InlineResponse40161|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40361|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listConfirmedTransactionsByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $request = $this->listConfirmedTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40061' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40061' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40061', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40161' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40161' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40161', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40361' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40361' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40361', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40061',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40161',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40361',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listConfirmedTransactionsByAddressAndTimeRangeAsync
+     *
+     * List Confirmed Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConfirmedTransactionsByAddressAndTimeRangeAsync($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        return $this->listConfirmedTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listConfirmedTransactionsByAddressAndTimeRangeAsyncWithHttpInfo
+     *
+     * List Confirmed Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listConfirmedTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $returnType = '\CryptoAPIs\Model\ListConfirmedTransactionsByAddressAndTimeRangeR';
+        $request = $this->listConfirmedTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listConfirmedTransactionsByAddressAndTimeRange'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listConfirmedTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling listConfirmedTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling listConfirmedTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling listConfirmedTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'from_timestamp' is set
+        if ($from_timestamp === null || (is_array($from_timestamp) && count($from_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $from_timestamp when calling listConfirmedTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'to_timestamp' is set
+        if ($to_timestamp === null || (is_array($to_timestamp) && count($to_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_timestamp when calling listConfirmedTransactionsByAddressAndTimeRange'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/addresses/{address}/transactions-by-time-range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_timestamp,
+            'fromTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_timestamp,
+            'toTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listInternalTransactionsByAddressAndTimeRange
+     *
+     * List Internal Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address String identifier of the address document represented in CryptoAPIs (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40063|\CryptoAPIs\Model\InlineResponse40163|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40363|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function listInternalTransactionsByAddressAndTimeRange($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        list($response) = $this->listInternalTransactionsByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation listInternalTransactionsByAddressAndTimeRangeWithHttpInfo
+     *
+     * List Internal Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address String identifier of the address document represented in CryptoAPIs (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40063|\CryptoAPIs\Model\InlineResponse40163|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40363|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listInternalTransactionsByAddressAndTimeRangeWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $request = $this->listInternalTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40063' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40063' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40063', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40163' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40163' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40163', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40363' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40363' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40363', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40063',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40163',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40363',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listInternalTransactionsByAddressAndTimeRangeAsync
+     *
+     * List Internal Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address String identifier of the address document represented in CryptoAPIs (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listInternalTransactionsByAddressAndTimeRangeAsync($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        return $this->listInternalTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listInternalTransactionsByAddressAndTimeRangeAsyncWithHttpInfo
+     *
+     * List Internal Transactions By Address And Time Range
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address String identifier of the address document represented in CryptoAPIs (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listInternalTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        $returnType = '\CryptoAPIs\Model\ListInternalTransactionsByAddressAndTimeRangeR';
+        $request = $this->listInternalTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listInternalTransactionsByAddressAndTimeRange'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address String identifier of the address document represented in CryptoAPIs (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listInternalTransactionsByAddressAndTimeRangeRequest($blockchain, $network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling listInternalTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling listInternalTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling listInternalTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'from_timestamp' is set
+        if ($from_timestamp === null || (is_array($from_timestamp) && count($from_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $from_timestamp when calling listInternalTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'to_timestamp' is set
+        if ($to_timestamp === null || (is_array($to_timestamp) && count($to_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_timestamp when calling listInternalTransactionsByAddressAndTimeRange'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/addresses/{address}/internal-by-time-range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_timestamp,
+            'fromTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_timestamp,
+            'toTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4315,7 +8085,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListLatestMinedBlocksR|\CryptoAPIs\Model\InlineResponse40042|\CryptoAPIs\Model\InlineResponse40142|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40342|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListLatestMinedBlocksR|\CryptoAPIs\Model\InlineResponse40045|\CryptoAPIs\Model\InlineResponse40145|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40345|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listLatestMinedBlocks($network, $blockchain, $count, $context = null)
     {
@@ -4335,7 +8105,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListLatestMinedBlocksR|\CryptoAPIs\Model\InlineResponse40042|\CryptoAPIs\Model\InlineResponse40142|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40342|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListLatestMinedBlocksR|\CryptoAPIs\Model\InlineResponse40045|\CryptoAPIs\Model\InlineResponse40145|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40345|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLatestMinedBlocksWithHttpInfo($network, $blockchain, $count, $context = null)
     {
@@ -4382,6 +8152,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListLatestMinedBlocksR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4390,26 +8163,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40042' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40045' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40045' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40042', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40045', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40142' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40145' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40145' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40142', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40145', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4418,6 +8197,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4426,14 +8208,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40342' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40345' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40345' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40342', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40345', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4442,6 +8227,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4454,6 +8242,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4466,6 +8257,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4478,6 +8272,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4490,6 +8287,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4502,6 +8302,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4516,6 +8319,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -4537,7 +8343,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40042',
+                        '\CryptoAPIs\Model\InlineResponse40045',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4545,7 +8351,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40142',
+                        '\CryptoAPIs\Model\InlineResponse40145',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4561,7 +8367,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40342',
+                        '\CryptoAPIs\Model\InlineResponse40345',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4668,6 +8474,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4733,16 +8542,13 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -4803,7 +8609,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -4824,7 +8630,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4847,7 +8653,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40017|\CryptoAPIs\Model\InlineResponse40117|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40317|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40018|\CryptoAPIs\Model\InlineResponse40118|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40318|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listTransactionsByBlockHash($blockchain, $network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -4869,7 +8675,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40017|\CryptoAPIs\Model\InlineResponse40117|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40317|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40018|\CryptoAPIs\Model\InlineResponse40118|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40318|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTransactionsByBlockHashWithHttpInfo($blockchain, $network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -4916,6 +8722,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListTransactionsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4924,26 +8733,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40017' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40018' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40018' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40017', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40018', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40117' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40118' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40118' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40117', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40118', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4952,6 +8767,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4960,14 +8778,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40317' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40318' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40318' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40317', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40318', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4976,6 +8797,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4988,6 +8812,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5000,6 +8827,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5012,6 +8842,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5024,6 +8857,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5038,6 +8874,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -5059,7 +8898,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40017',
+                        '\CryptoAPIs\Model\InlineResponse40018',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5067,7 +8906,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40117',
+                        '\CryptoAPIs\Model\InlineResponse40118',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5083,7 +8922,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40317',
+                        '\CryptoAPIs\Model\InlineResponse40318',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5186,6 +9025,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5253,38 +9095,29 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -5345,7 +9178,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -5366,7 +9199,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5389,7 +9222,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40024|\CryptoAPIs\Model\InlineResponse40124|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40324|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40025|\CryptoAPIs\Model\InlineResponse40125|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40325|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listTransactionsByBlockHeight($blockchain, $network, $height, $context = null, $limit = 50, $offset = 0)
     {
@@ -5411,7 +9244,7 @@ class UnifiedEndpointsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40024|\CryptoAPIs\Model\InlineResponse40124|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40324|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40025|\CryptoAPIs\Model\InlineResponse40125|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40325|\CryptoAPIs\Model\InlineResponse4042|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTransactionsByBlockHeightWithHttpInfo($blockchain, $network, $height, $context = null, $limit = 50, $offset = 0)
     {
@@ -5458,6 +9291,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListTransactionsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5466,26 +9302,32 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40024' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40025' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40025' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40024', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40025', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40124' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40125' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40125' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40124', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40125', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5494,6 +9336,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5502,14 +9347,17 @@ class UnifiedEndpointsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40324' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40325' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40325' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40324', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40325', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -5518,6 +9366,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5530,6 +9381,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5542,6 +9396,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5554,6 +9411,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5566,6 +9426,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5578,6 +9441,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5592,6 +9458,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -5613,7 +9482,7 @@ class UnifiedEndpointsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40024',
+                        '\CryptoAPIs\Model\InlineResponse40025',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5621,7 +9490,7 @@ class UnifiedEndpointsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40124',
+                        '\CryptoAPIs\Model\InlineResponse40125',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5637,7 +9506,7 @@ class UnifiedEndpointsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40324',
+                        '\CryptoAPIs\Model\InlineResponse40325',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5748,6 +9617,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -5815,38 +9687,29 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -5907,7 +9770,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -5928,7 +9791,7 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6020,6 +9883,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListUnconfirmedTransactionsByAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6032,6 +9898,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40015' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6044,6 +9913,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40115' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6056,6 +9928,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6068,6 +9943,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40315' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6080,6 +9958,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6092,6 +9973,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6104,6 +9988,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6116,6 +10003,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6128,6 +10018,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6142,6 +10035,9 @@ class UnifiedEndpointsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -6290,6 +10186,9 @@ class UnifiedEndpointsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -6357,38 +10256,29 @@ class UnifiedEndpointsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -6449,7 +10339,7 @@ class UnifiedEndpointsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -6470,7 +10360,576 @@ class UnifiedEndpointsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listUnspentTransactionOutputsByAddress
+     *
+     * List Unspent Transaction Outputs By Address
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR|\CryptoAPIs\Model\InlineResponse40059|\CryptoAPIs\Model\InlineResponse40159|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40359|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function listUnspentTransactionOutputsByAddress($blockchain, $network, $address, $context = null, $limit = 50, $offset = 0)
+    {
+        list($response) = $this->listUnspentTransactionOutputsByAddressWithHttpInfo($blockchain, $network, $address, $context, $limit, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation listUnspentTransactionOutputsByAddressWithHttpInfo
+     *
+     * List Unspent Transaction Outputs By Address
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR|\CryptoAPIs\Model\InlineResponse40059|\CryptoAPIs\Model\InlineResponse40159|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40359|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listUnspentTransactionOutputsByAddressWithHttpInfo($blockchain, $network, $address, $context = null, $limit = 50, $offset = 0)
+    {
+        $request = $this->listUnspentTransactionOutputsByAddressRequest($blockchain, $network, $address, $context, $limit, $offset);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40059' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40059' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40059', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40159' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40159' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40159', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40359' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40359' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40359', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40059',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40159',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40359',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listUnspentTransactionOutputsByAddressAsync
+     *
+     * List Unspent Transaction Outputs By Address
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listUnspentTransactionOutputsByAddressAsync($blockchain, $network, $address, $context = null, $limit = 50, $offset = 0)
+    {
+        return $this->listUnspentTransactionOutputsByAddressAsyncWithHttpInfo($blockchain, $network, $address, $context, $limit, $offset)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listUnspentTransactionOutputsByAddressAsyncWithHttpInfo
+     *
+     * List Unspent Transaction Outputs By Address
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listUnspentTransactionOutputsByAddressAsyncWithHttpInfo($blockchain, $network, $address, $context = null, $limit = 50, $offset = 0)
+    {
+        $returnType = '\CryptoAPIs\Model\ListUnspentTransactionOutputsByAddressR';
+        $request = $this->listUnspentTransactionOutputsByAddressRequest($blockchain, $network, $address, $context, $limit, $offset);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listUnspentTransactionOutputsByAddress'
+     *
+     * @param  string $blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listUnspentTransactionOutputsByAddressRequest($blockchain, $network, $address, $context = null, $limit = 50, $offset = 0)
+    {
+        // verify the required parameter 'blockchain' is set
+        if ($blockchain === null || (is_array($blockchain) && count($blockchain) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $blockchain when calling listUnspentTransactionOutputsByAddress'
+            );
+        }
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling listUnspentTransactionOutputsByAddress'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling listUnspentTransactionOutputsByAddress'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/{blockchain}/{network}/addresses/{address}/unspent-outputs';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($blockchain !== null) {
+            $resourcePath = str_replace(
+                '{' . 'blockchain' . '}',
+                ObjectSerializer::toPathValue($blockchain),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

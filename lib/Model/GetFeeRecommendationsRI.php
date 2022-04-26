@@ -63,7 +63,8 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         'unit' => 'string',
         'fast' => 'string',
         'slow' => 'string',
-        'standard' => 'string'
+        'standard' => 'string',
+        'fee_cushion_multiplier' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         'unit' => null,
         'fast' => null,
         'slow' => null,
-        'standard' => null
+        'standard' => null,
+        'fee_cushion_multiplier' => null
     ];
 
     /**
@@ -110,7 +112,8 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         'unit' => 'unit',
         'fast' => 'fast',
         'slow' => 'slow',
-        'standard' => 'standard'
+        'standard' => 'standard',
+        'fee_cushion_multiplier' => 'feeCushionMultiplier'
     ];
 
     /**
@@ -122,7 +125,8 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         'unit' => 'setUnit',
         'fast' => 'setFast',
         'slow' => 'setSlow',
-        'standard' => 'setStandard'
+        'standard' => 'setStandard',
+        'fee_cushion_multiplier' => 'setFeeCushionMultiplier'
     ];
 
     /**
@@ -134,7 +138,8 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         'unit' => 'getUnit',
         'fast' => 'getFast',
         'slow' => 'getSlow',
-        'standard' => 'getStandard'
+        'standard' => 'getStandard',
+        'fee_cushion_multiplier' => 'getFeeCushionMultiplier'
     ];
 
     /**
@@ -198,6 +203,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['fast'] = $data['fast'] ?? null;
         $this->container['slow'] = $data['slow'] ?? null;
         $this->container['standard'] = $data['standard'] ?? null;
+        $this->container['fee_cushion_multiplier'] = $data['fee_cushion_multiplier'] ?? null;
     }
 
     /**
@@ -220,6 +226,9 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['standard'] === null) {
             $invalidProperties[] = "'standard' can't be null";
+        }
+        if ($this->container['fee_cushion_multiplier'] === null) {
+            $invalidProperties[] = "'fee_cushion_multiplier' can't be null";
         }
         return $invalidProperties;
     }
@@ -331,6 +340,30 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
+    /**
+     * Gets fee_cushion_multiplier
+     *
+     * @return string
+     */
+    public function getFeeCushionMultiplier()
+    {
+        return $this->container['fee_cushion_multiplier'];
+    }
+
+    /**
+     * Sets fee_cushion_multiplier
+     *
+     * @param string $fee_cushion_multiplier Represents the fee cushion multiplier used to multiply the base fee.
+     *
+     * @return self
+     */
+    public function setFeeCushionMultiplier($fee_cushion_multiplier)
+    {
+        $this->container['fee_cushion_multiplier'] = $fee_cushion_multiplier;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -338,7 +371,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -350,6 +383,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -363,7 +397,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -379,7 +413,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -391,6 +425,7 @@ class GetFeeRecommendationsRI implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

@@ -127,7 +127,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ActivateBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40067|\CryptoAPIs\Model\InlineResponse40167|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40367|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ActivateBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40081|\CryptoAPIs\Model\InlineResponse40181|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40381|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function activateBlockchainEventSubscription($reference_id, $context = null, $activate_blockchain_event_subscription_rb = null)
     {
@@ -146,7 +146,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ActivateBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40067|\CryptoAPIs\Model\InlineResponse40167|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40367|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ActivateBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40081|\CryptoAPIs\Model\InlineResponse40181|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40381|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function activateBlockchainEventSubscriptionWithHttpInfo($reference_id, $context = null, $activate_blockchain_event_subscription_rb = null)
     {
@@ -193,6 +193,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ActivateBlockchainEventSubscriptionR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -201,26 +204,32 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40067' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40081' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40081' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40067', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40081', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40167' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40181' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40181' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40167', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40181', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -229,6 +238,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -237,14 +249,17 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40367' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40381' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40381' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40367', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40381', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -253,6 +268,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -265,6 +283,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -277,6 +298,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -289,6 +313,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -301,6 +328,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -313,6 +343,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -327,6 +360,9 @@ class ManageSubscriptionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -348,7 +384,7 @@ class ManageSubscriptionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40067',
+                        '\CryptoAPIs\Model\InlineResponse40081',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -356,7 +392,7 @@ class ManageSubscriptionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40167',
+                        '\CryptoAPIs\Model\InlineResponse40181',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -372,7 +408,7 @@ class ManageSubscriptionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40367',
+                        '\CryptoAPIs\Model\InlineResponse40381',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -477,6 +513,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -529,16 +568,13 @@ class ManageSubscriptionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -589,7 +625,7 @@ class ManageSubscriptionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -610,7 +646,7 @@ class ManageSubscriptionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -631,7 +667,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\DeleteBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40068|\CryptoAPIs\Model\InlineResponse40168|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40368|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\DeleteBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40082|\CryptoAPIs\Model\InlineResponse40182|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40382|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function deleteBlockchainEventSubscription($blockchain, $network, $reference_id, $context = null)
     {
@@ -651,7 +687,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\DeleteBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40068|\CryptoAPIs\Model\InlineResponse40168|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40368|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\DeleteBlockchainEventSubscriptionR|\CryptoAPIs\Model\InlineResponse40082|\CryptoAPIs\Model\InlineResponse40182|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40382|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBlockchainEventSubscriptionWithHttpInfo($blockchain, $network, $reference_id, $context = null)
     {
@@ -698,6 +734,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\DeleteBlockchainEventSubscriptionR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -706,26 +745,32 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40068' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40082' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40082' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40068', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40082', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40168' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40182' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40182' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40168', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40182', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -734,6 +779,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -742,14 +790,17 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40368' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40382' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40382' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40368', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40382', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -758,6 +809,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -770,6 +824,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -782,6 +839,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -794,6 +854,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -806,6 +869,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -818,6 +884,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -832,6 +901,9 @@ class ManageSubscriptionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -853,7 +925,7 @@ class ManageSubscriptionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40068',
+                        '\CryptoAPIs\Model\InlineResponse40082',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -861,7 +933,7 @@ class ManageSubscriptionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40168',
+                        '\CryptoAPIs\Model\InlineResponse40182',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -877,7 +949,7 @@ class ManageSubscriptionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40368',
+                        '\CryptoAPIs\Model\InlineResponse40382',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -984,6 +1056,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1049,16 +1124,13 @@ class ManageSubscriptionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1119,7 +1191,7 @@ class ManageSubscriptionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1140,9 +1212,537 @@ class ManageSubscriptionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getBlockchainEventSubscriptionDetailsByReferenceID
+     *
+     * Get Blockchain Event Subscription Details By Reference ID
+     *
+     * @param  string $reference_id Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR|\CryptoAPIs\Model\InlineResponse40080|\CryptoAPIs\Model\InlineResponse40180|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40380|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function getBlockchainEventSubscriptionDetailsByReferenceID($reference_id, $context = null)
+    {
+        list($response) = $this->getBlockchainEventSubscriptionDetailsByReferenceIDWithHttpInfo($reference_id, $context);
+        return $response;
+    }
+
+    /**
+     * Operation getBlockchainEventSubscriptionDetailsByReferenceIDWithHttpInfo
+     *
+     * Get Blockchain Event Subscription Details By Reference ID
+     *
+     * @param  string $reference_id Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR|\CryptoAPIs\Model\InlineResponse40080|\CryptoAPIs\Model\InlineResponse40180|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40380|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getBlockchainEventSubscriptionDetailsByReferenceIDWithHttpInfo($reference_id, $context = null)
+    {
+        $request = $this->getBlockchainEventSubscriptionDetailsByReferenceIDRequest($reference_id, $context);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40080' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40080' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40080', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40180' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40180' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40180', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40380' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40380' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40380', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\CryptoAPIs\Model\InlineResponse4041' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse4041', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40080',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40180',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40380',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse4041',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getBlockchainEventSubscriptionDetailsByReferenceIDAsync
+     *
+     * Get Blockchain Event Subscription Details By Reference ID
+     *
+     * @param  string $reference_id Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlockchainEventSubscriptionDetailsByReferenceIDAsync($reference_id, $context = null)
+    {
+        return $this->getBlockchainEventSubscriptionDetailsByReferenceIDAsyncWithHttpInfo($reference_id, $context)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getBlockchainEventSubscriptionDetailsByReferenceIDAsyncWithHttpInfo
+     *
+     * Get Blockchain Event Subscription Details By Reference ID
+     *
+     * @param  string $reference_id Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBlockchainEventSubscriptionDetailsByReferenceIDAsyncWithHttpInfo($reference_id, $context = null)
+    {
+        $returnType = '\CryptoAPIs\Model\GetBlockchainEventSubscriptionDetailsByReferenceIDR';
+        $request = $this->getBlockchainEventSubscriptionDetailsByReferenceIDRequest($reference_id, $context);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getBlockchainEventSubscriptionDetailsByReferenceID'
+     *
+     * @param  string $reference_id Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getBlockchainEventSubscriptionDetailsByReferenceIDRequest($reference_id, $context = null)
+    {
+        // verify the required parameter 'reference_id' is set
+        if ($reference_id === null || (is_array($reference_id) && count($reference_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reference_id when calling getBlockchainEventSubscriptionDetailsByReferenceID'
+            );
+        }
+
+        $resourcePath = '/blockchain-events/subscriptions/{referenceId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($reference_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'referenceId' . '}',
+                ObjectSerializer::toPathValue($reference_id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1162,7 +1762,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListBlockchainEventsSubscriptionsR|\CryptoAPIs\Model\InlineResponse40066|\CryptoAPIs\Model\InlineResponse40166|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40366|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListBlockchainEventsSubscriptionsR|\CryptoAPIs\Model\InlineResponse40079|\CryptoAPIs\Model\InlineResponse40179|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40379|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listBlockchainEventsSubscriptions($blockchain, $network, $context = null, $limit = 50, $offset = 0)
     {
@@ -1183,7 +1783,7 @@ class ManageSubscriptionsApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListBlockchainEventsSubscriptionsR|\CryptoAPIs\Model\InlineResponse40066|\CryptoAPIs\Model\InlineResponse40166|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40366|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListBlockchainEventsSubscriptionsR|\CryptoAPIs\Model\InlineResponse40079|\CryptoAPIs\Model\InlineResponse40179|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40379|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listBlockchainEventsSubscriptionsWithHttpInfo($blockchain, $network, $context = null, $limit = 50, $offset = 0)
     {
@@ -1230,6 +1830,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListBlockchainEventsSubscriptionsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1238,26 +1841,32 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40066' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40079' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40079' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40066', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40079', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40166' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40179' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40179' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40166', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40179', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1266,6 +1875,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1274,14 +1886,17 @@ class ManageSubscriptionsApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40366' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40379' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40379' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40366', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40379', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1290,6 +1905,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1302,6 +1920,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1314,6 +1935,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1326,6 +1950,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1338,6 +1965,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1352,6 +1982,9 @@ class ManageSubscriptionsApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1373,7 +2006,7 @@ class ManageSubscriptionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40066',
+                        '\CryptoAPIs\Model\InlineResponse40079',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1381,7 +2014,7 @@ class ManageSubscriptionsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40166',
+                        '\CryptoAPIs\Model\InlineResponse40179',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1397,7 +2030,7 @@ class ManageSubscriptionsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40366',
+                        '\CryptoAPIs\Model\InlineResponse40379',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1498,6 +2131,9 @@ class ManageSubscriptionsApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1558,38 +2194,29 @@ class ManageSubscriptionsApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1642,7 +2269,7 @@ class ManageSubscriptionsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1663,7 +2290,7 @@ class ManageSubscriptionsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

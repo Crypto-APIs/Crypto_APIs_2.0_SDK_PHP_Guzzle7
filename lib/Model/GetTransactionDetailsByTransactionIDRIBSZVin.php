@@ -79,7 +79,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
     protected static $openAPIFormats = [
         'addresses' => null,
         'script_sig' => null,
-        'sequence' => null,
+        'sequence' => 'int64',
         'txid' => null,
         'txinwitness' => null,
         'value' => null,
@@ -437,7 +437,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -449,6 +449,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -462,7 +463,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -478,7 +479,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -490,6 +491,7 @@ class GetTransactionDetailsByTransactionIDRIBSZVin implements ModelInterface, Ar
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

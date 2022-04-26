@@ -126,7 +126,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetLatestMinedXRPRippleBlockR|\CryptoAPIs\Model\InlineResponse40039|\CryptoAPIs\Model\InlineResponse40139|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40339|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetLatestMinedXRPRippleBlockR|\CryptoAPIs\Model\InlineResponse40042|\CryptoAPIs\Model\InlineResponse40142|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40342|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getLatestMinedXRPRippleBlock($network, $context = null)
     {
@@ -144,7 +144,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetLatestMinedXRPRippleBlockR|\CryptoAPIs\Model\InlineResponse40039|\CryptoAPIs\Model\InlineResponse40139|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40339|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetLatestMinedXRPRippleBlockR|\CryptoAPIs\Model\InlineResponse40042|\CryptoAPIs\Model\InlineResponse40142|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40342|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLatestMinedXRPRippleBlockWithHttpInfo($network, $context = null)
     {
@@ -191,6 +191,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetLatestMinedXRPRippleBlockR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -199,26 +202,32 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40039' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40042' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40042' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40039', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40042', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40139' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40142' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40142' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40139', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40142', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -227,6 +236,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -235,14 +247,17 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40339' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40342' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40342' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40339', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40342', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -251,6 +266,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -263,6 +281,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -275,6 +296,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -287,6 +311,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -299,6 +326,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -311,6 +341,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -325,6 +358,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -346,7 +382,7 @@ class XRPRippleApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40039',
+                        '\CryptoAPIs\Model\InlineResponse40042',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -354,7 +390,7 @@ class XRPRippleApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40139',
+                        '\CryptoAPIs\Model\InlineResponse40142',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -370,7 +406,7 @@ class XRPRippleApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40339',
+                        '\CryptoAPIs\Model\InlineResponse40342',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,6 +509,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -524,16 +563,13 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -578,7 +614,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -599,7 +635,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -685,6 +721,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetXRPRippleAddressDetailsR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -697,6 +736,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4002' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -709,6 +751,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4012' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -721,6 +766,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -733,6 +781,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4032' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -745,6 +796,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -757,6 +811,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -769,6 +826,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -781,6 +841,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -793,6 +856,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -807,6 +873,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -949,6 +1018,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1007,16 +1079,13 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1069,7 +1138,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1090,7 +1159,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1110,7 +1179,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40031|\CryptoAPIs\Model\InlineResponse40131|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40331|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40032|\CryptoAPIs\Model\InlineResponse40132|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40332|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getXRPRippleBlockDetailsByBlockHash($network, $block_hash, $context = null)
     {
@@ -1129,7 +1198,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40031|\CryptoAPIs\Model\InlineResponse40131|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40331|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHashR|\CryptoAPIs\Model\InlineResponse40032|\CryptoAPIs\Model\InlineResponse40132|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40332|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getXRPRippleBlockDetailsByBlockHashWithHttpInfo($network, $block_hash, $context = null)
     {
@@ -1176,6 +1245,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1184,26 +1256,32 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40031' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40032' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40032' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40031', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40032', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40131' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40132' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40132' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40131', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40132', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1212,6 +1290,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1220,14 +1301,17 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40331' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40332' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40332' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40331', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40332', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1236,6 +1320,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1248,6 +1335,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1260,6 +1350,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1272,6 +1365,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1284,6 +1380,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1296,6 +1395,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1310,6 +1412,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1331,7 +1436,7 @@ class XRPRippleApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40031',
+                        '\CryptoAPIs\Model\InlineResponse40032',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1339,7 +1444,7 @@ class XRPRippleApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40131',
+                        '\CryptoAPIs\Model\InlineResponse40132',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1355,7 +1460,7 @@ class XRPRippleApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40331',
+                        '\CryptoAPIs\Model\InlineResponse40332',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1460,6 +1565,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1518,16 +1626,13 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -1580,7 +1685,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -1601,7 +1706,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1621,7 +1726,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40027|\CryptoAPIs\Model\InlineResponse40127|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40327|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40028|\CryptoAPIs\Model\InlineResponse40128|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40328|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function getXRPRippleBlockDetailsByBlockHeight($network, $block_height, $context = null)
     {
@@ -1640,7 +1745,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40027|\CryptoAPIs\Model\InlineResponse40127|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40327|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40028|\CryptoAPIs\Model\InlineResponse40128|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40328|\CryptoAPIs\Model\InlineResponse4041|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function getXRPRippleBlockDetailsByBlockHeightWithHttpInfo($network, $block_height, $context = null)
     {
@@ -1687,6 +1792,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetXRPRippleBlockDetailsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1695,26 +1803,32 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40027' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40028' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40028' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40027', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40028', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40127' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40128' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40128' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40127', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40128', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1723,6 +1837,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1731,14 +1848,17 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40327' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40328' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40328' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40327', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40328', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1747,6 +1867,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1759,6 +1882,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1771,6 +1897,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1783,6 +1912,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1795,6 +1927,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1807,6 +1942,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -1821,6 +1959,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -1842,7 +1983,7 @@ class XRPRippleApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40027',
+                        '\CryptoAPIs\Model\InlineResponse40028',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1850,7 +1991,7 @@ class XRPRippleApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40127',
+                        '\CryptoAPIs\Model\InlineResponse40128',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1866,7 +2007,7 @@ class XRPRippleApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40327',
+                        '\CryptoAPIs\Model\InlineResponse40328',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1971,6 +2112,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2029,16 +2173,13 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2091,7 +2232,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2112,7 +2253,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2198,6 +2339,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\GetXRPRippleTransactionDetailsByTransactionIDR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2210,6 +2354,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4006' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2222,6 +2369,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4016' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2234,6 +2384,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2246,6 +2399,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4036' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2258,6 +2414,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse4041' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2270,6 +2429,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2282,6 +2444,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2294,6 +2459,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2306,6 +2474,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2318,6 +2489,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2332,6 +2506,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -2482,6 +2659,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2540,16 +2720,13 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -2602,7 +2779,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -2623,7 +2800,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2715,6 +2892,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2727,6 +2907,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40011' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2739,6 +2922,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40111' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2751,6 +2937,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2763,6 +2952,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40311' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2775,6 +2967,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2787,6 +2982,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2799,6 +2997,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2811,6 +3012,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2823,6 +3027,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -2837,6 +3044,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -2985,6 +3195,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3046,49 +3259,37 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($transaction_type !== null) {
-            if('form' === 'form' && is_array($transaction_type)) {
-                foreach($transaction_type as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['transactionType'] = $transaction_type;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $transaction_type,
+            'transactionType', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3141,7 +3342,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3162,7 +3363,608 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listXRPRippleTransactionsByAddressAndTimeRange
+     *
+     * List XRP (Ripple) Transactions By Address And Time Range
+     *
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param  string $transaction_type Defines the transaction type. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40016|\CryptoAPIs\Model\InlineResponse40116|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40316|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     */
+    public function listXRPRippleTransactionsByAddressAndTimeRange($network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0, $transaction_type = null)
+    {
+        list($response) = $this->listXRPRippleTransactionsByAddressAndTimeRangeWithHttpInfo($network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset, $transaction_type);
+        return $response;
+    }
+
+    /**
+     * Operation listXRPRippleTransactionsByAddressAndTimeRangeWithHttpInfo
+     *
+     * List XRP (Ripple) Transactions By Address And Time Range
+     *
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param  string $transaction_type Defines the transaction type. (optional)
+     *
+     * @throws \CryptoAPIs\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR|\CryptoAPIs\Model\InlineResponse40016|\CryptoAPIs\Model\InlineResponse40116|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40316|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listXRPRippleTransactionsByAddressAndTimeRangeWithHttpInfo($network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0, $transaction_type = null)
+    {
+        $request = $this->listXRPRippleTransactionsByAddressAndTimeRangeRequest($network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset, $transaction_type);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\CryptoAPIs\Model\InlineResponse40016' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40016' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40016', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\CryptoAPIs\Model\InlineResponse40116' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40116' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40116', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 402:
+                    if ('\CryptoAPIs\Model\InlineResponse402' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse402', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\CryptoAPIs\Model\InlineResponse40316' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40316' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40316', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\CryptoAPIs\Model\InlineResponse409' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse409', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\CryptoAPIs\Model\InlineResponse415' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse415', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\CryptoAPIs\Model\InlineResponse422' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse422', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\CryptoAPIs\Model\InlineResponse429' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse429', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\CryptoAPIs\Model\InlineResponse500' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse500', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40016',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40116',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse402',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse40316',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse409',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse415',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse422',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse429',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\CryptoAPIs\Model\InlineResponse500',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listXRPRippleTransactionsByAddressAndTimeRangeAsync
+     *
+     * List XRP (Ripple) Transactions By Address And Time Range
+     *
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param  string $transaction_type Defines the transaction type. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listXRPRippleTransactionsByAddressAndTimeRangeAsync($network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0, $transaction_type = null)
+    {
+        return $this->listXRPRippleTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset, $transaction_type)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listXRPRippleTransactionsByAddressAndTimeRangeAsyncWithHttpInfo
+     *
+     * List XRP (Ripple) Transactions By Address And Time Range
+     *
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param  string $transaction_type Defines the transaction type. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listXRPRippleTransactionsByAddressAndTimeRangeAsyncWithHttpInfo($network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0, $transaction_type = null)
+    {
+        $returnType = '\CryptoAPIs\Model\ListXRPRippleTransactionsByAddressAndTimeRangeR';
+        $request = $this->listXRPRippleTransactionsByAddressAndTimeRangeRequest($network, $address, $from_timestamp, $to_timestamp, $context, $limit, $offset, $transaction_type);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listXRPRippleTransactionsByAddressAndTimeRange'
+     *
+     * @param  string $network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param  string $address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param  int $from_timestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param  int $to_timestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param  string $context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param  int $limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param  int $offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param  string $transaction_type Defines the transaction type. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listXRPRippleTransactionsByAddressAndTimeRangeRequest($network, $address, $from_timestamp, $to_timestamp, $context = null, $limit = 50, $offset = 0, $transaction_type = null)
+    {
+        // verify the required parameter 'network' is set
+        if ($network === null || (is_array($network) && count($network) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $network when calling listXRPRippleTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling listXRPRippleTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'from_timestamp' is set
+        if ($from_timestamp === null || (is_array($from_timestamp) && count($from_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $from_timestamp when calling listXRPRippleTransactionsByAddressAndTimeRange'
+            );
+        }
+        // verify the required parameter 'to_timestamp' is set
+        if ($to_timestamp === null || (is_array($to_timestamp) && count($to_timestamp) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_timestamp when calling listXRPRippleTransactionsByAddressAndTimeRange'
+            );
+        }
+
+        $resourcePath = '/blockchain-data/xrp-specific/{network}/addresses/{address}/transactions-by-time-range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $from_timestamp,
+            'fromTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $to_timestamp,
+            'toTimestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $transaction_type,
+            'transactionType', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
+
+
+        // path params
+        if ($network !== null) {
+            $resourcePath = str_replace(
+                '{' . 'network' . '}',
+                ObjectSerializer::toPathValue($network),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3184,7 +3986,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40018|\CryptoAPIs\Model\InlineResponse40118|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40318|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40019|\CryptoAPIs\Model\InlineResponse40119|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40319|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listXRPRippleTransactionsByBlockHash($network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -3205,7 +4007,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40018|\CryptoAPIs\Model\InlineResponse40118|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40318|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHashR|\CryptoAPIs\Model\InlineResponse40019|\CryptoAPIs\Model\InlineResponse40119|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40319|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listXRPRippleTransactionsByBlockHashWithHttpInfo($network, $block_hash, $context = null, $limit = 50, $offset = 0)
     {
@@ -3252,6 +4054,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHashR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3260,26 +4065,32 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40018' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40019' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40019' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40018', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40019', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40118' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40119' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40119' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40118', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40119', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3288,6 +4099,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3296,14 +4110,17 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40318' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40319' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40319' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40318', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40319', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3312,6 +4129,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3324,6 +4144,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3336,6 +4159,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3348,6 +4174,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3360,6 +4189,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3374,6 +4206,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3395,7 +4230,7 @@ class XRPRippleApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40018',
+                        '\CryptoAPIs\Model\InlineResponse40019',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3403,7 +4238,7 @@ class XRPRippleApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40118',
+                        '\CryptoAPIs\Model\InlineResponse40119',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3419,7 +4254,7 @@ class XRPRippleApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40318',
+                        '\CryptoAPIs\Model\InlineResponse40319',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3520,6 +4355,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3580,38 +4418,29 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -3664,7 +4493,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -3685,7 +4514,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3707,7 +4536,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40023|\CryptoAPIs\Model\InlineResponse40123|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40323|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
+     * @return \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40024|\CryptoAPIs\Model\InlineResponse40124|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40324|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500
      */
     public function listXRPRippleTransactionsByBlockHeight($network, $block_height, $context = null, $limit = 50, $offset = 0)
     {
@@ -3728,7 +4557,7 @@ class XRPRippleApi
      *
      * @throws \CryptoAPIs\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40023|\CryptoAPIs\Model\InlineResponse40123|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40323|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHeightR|\CryptoAPIs\Model\InlineResponse40024|\CryptoAPIs\Model\InlineResponse40124|\CryptoAPIs\Model\InlineResponse402|\CryptoAPIs\Model\InlineResponse40324|\CryptoAPIs\Model\InlineResponse409|\CryptoAPIs\Model\InlineResponse415|\CryptoAPIs\Model\InlineResponse422|\CryptoAPIs\Model\InlineResponse429|\CryptoAPIs\Model\InlineResponse500, HTTP status code, HTTP response headers (array of strings)
      */
     public function listXRPRippleTransactionsByBlockHeightWithHttpInfo($network, $block_height, $context = null, $limit = 50, $offset = 0)
     {
@@ -3775,6 +4604,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\ListXRPRippleTransactionsByBlockHeightR' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3783,26 +4615,32 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\CryptoAPIs\Model\InlineResponse40023' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40024' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40024' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40023', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40024', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\CryptoAPIs\Model\InlineResponse40123' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40124' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40124' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40123', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40124', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3811,6 +4649,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse402' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3819,14 +4660,17 @@ class XRPRippleApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\CryptoAPIs\Model\InlineResponse40323' === '\SplFileObject') {
+                    if ('\CryptoAPIs\Model\InlineResponse40324' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse40324' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40323', []),
+                        ObjectSerializer::deserialize($content, '\CryptoAPIs\Model\InlineResponse40324', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3835,6 +4679,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse409' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3847,6 +4694,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse415' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3859,6 +4709,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse422' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3871,6 +4724,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse429' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3883,6 +4739,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\CryptoAPIs\Model\InlineResponse500' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -3897,6 +4756,9 @@ class XRPRippleApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -3918,7 +4780,7 @@ class XRPRippleApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40023',
+                        '\CryptoAPIs\Model\InlineResponse40024',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3926,7 +4788,7 @@ class XRPRippleApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40123',
+                        '\CryptoAPIs\Model\InlineResponse40124',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3942,7 +4804,7 @@ class XRPRippleApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\CryptoAPIs\Model\InlineResponse40323',
+                        '\CryptoAPIs\Model\InlineResponse40324',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4043,6 +4905,9 @@ class XRPRippleApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -4103,38 +4968,29 @@ class XRPRippleApi
         $multipart = false;
 
         // query params
-        if ($context !== null) {
-            if('form' === 'form' && is_array($context)) {
-                foreach($context as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['context'] = $context;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $context,
+            'context', // param base name
+            'string', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($limit !== null) {
-            if('form' === 'form' && is_array($limit)) {
-                foreach($limit as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['limit'] = $limit;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
         // query params
-        if ($offset !== null) {
-            if('form' === 'form' && is_array($offset)) {
-                foreach($offset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['offset'] = $offset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true // explode
+        ) ?? []);
 
 
         // path params
@@ -4187,7 +5043,7 @@ class XRPRippleApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -4208,7 +5064,7 @@ class XRPRippleApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),

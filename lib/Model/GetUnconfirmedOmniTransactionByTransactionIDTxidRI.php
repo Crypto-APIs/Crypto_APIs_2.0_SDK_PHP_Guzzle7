@@ -635,7 +635,7 @@ class GetUnconfirmedOmniTransactionByTransactionIDTxidRI implements ModelInterfa
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -647,6 +647,7 @@ class GetUnconfirmedOmniTransactionByTransactionIDTxidRI implements ModelInterfa
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -660,7 +661,7 @@ class GetUnconfirmedOmniTransactionByTransactionIDTxidRI implements ModelInterfa
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -676,7 +677,7 @@ class GetUnconfirmedOmniTransactionByTransactionIDTxidRI implements ModelInterfa
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -688,6 +689,7 @@ class GetUnconfirmedOmniTransactionByTransactionIDTxidRI implements ModelInterfa
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

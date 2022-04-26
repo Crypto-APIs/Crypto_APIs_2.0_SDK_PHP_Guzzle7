@@ -101,7 +101,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'locktime' => null,
+        'locktime' => 'int64',
         'size' => null,
         'v_size' => null,
         'version' => null,
@@ -125,10 +125,10 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
         'value_balance' => null,
         'version_group_id' => null,
         'additional_data' => null,
-        'destination_tag' => null,
+        'destination_tag' => 'int64',
         'offer' => null,
         'receive' => null,
-        'sequence' => null,
+        'sequence' => 'int64',
         'status' => null,
         'type' => null,
         'value' => null
@@ -1226,7 +1226,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -1238,6 +1238,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -1251,7 +1252,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -1267,7 +1268,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -1279,6 +1280,7 @@ class GetTransactionDetailsByTransactionIDFromCallbackRIBS implements ModelInter
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
