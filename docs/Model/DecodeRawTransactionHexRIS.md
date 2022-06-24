@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **transaction_hash** | **string** | Represents the same as transactionId for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols hash is different from transactionId for SegWit transactions. |
 **v_size** | **int** | Represents the virtual size of this transaction. |
 **version** | **int** | Represents the transaction version number. |
-**vin** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVin[]**](DecodeRawTransactionHexRISZVin.md) | Represents the Inputs of the transaction |
-**vout** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVout[]**](DecodeRawTransactionHexRISZVout.md) | Represents the Inputs of the transaction |
+**vin** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVinInner[]**](DecodeRawTransactionHexRISZVinInner.md) | Represents the Inputs of the transaction |
+**vout** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVoutInner[]**](DecodeRawTransactionHexRISZVoutInner.md) | Represents the Inputs of the transaction |
 **weight** | **int** | Represents the size of a block, measured in weight units and including the segwit discount. | [optional]
 **approximate_fee** | **string** | Defines the approximate fee value. When isConfirmed is True - Defines the amount of the transaction fee When isConfirmed is False - For ETH-based blockchains this attribute represents the max fee value. | [optional]
 **approximate_minimum_required_fee** | **string** | Defines the approximate minimum fee that is required for the transaction. | [optional]

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **size** | **int** | Represents the total size of this transaction. |
 **v_size** | **int** | Represents the virtual size of this transaction. |
 **version** | **int** | Represents the transaction version number. |
-**vin** | [**\CryptoAPIs\Model\GetWalletTransactionDetailsByTransactionIDRIBSLVin[]**](GetWalletTransactionDetailsByTransactionIDRIBSLVin.md) | Object Array representation of transaction inputs |
-**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSLVout[]**](GetTransactionDetailsByTransactionIDRIBSLVout.md) | Object Array representation of transaction outputs |
+**vin** | [**\CryptoAPIs\Model\GetWalletTransactionDetailsByTransactionIDRIBSLVinInner[]**](GetWalletTransactionDetailsByTransactionIDRIBSLVinInner.md) | Object Array representation of transaction inputs |
+**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSLVoutInner[]**](GetTransactionDetailsByTransactionIDRIBSLVoutInner.md) | Object Array representation of transaction outputs |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

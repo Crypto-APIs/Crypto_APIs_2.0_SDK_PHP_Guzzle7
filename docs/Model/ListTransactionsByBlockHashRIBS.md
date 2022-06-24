@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **size** | **int** | Represents the total size of this transaction. |
 **v_size** | **int** | Represents the virtual size of this transaction. |
 **version** | **int** | Numeric representation of the transaction Represents the transaction version number. |
-**vin** | [**\CryptoAPIs\Model\ListTransactionsByBlockHashRIBSZVin[]**](ListTransactionsByBlockHashRIBSZVin.md) | Object Array representation of transaction inputs |
-**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVout[]**](GetTransactionDetailsByTransactionIDRIBSZVout.md) | Object Array representation of transaction outputs |
+**vin** | [**\CryptoAPIs\Model\ListTransactionsByBlockHashRIBSZVinInner[]**](ListTransactionsByBlockHashRIBSZVinInner.md) | Object Array representation of transaction inputs |
+**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVoutInner[]**](GetTransactionDetailsByTransactionIDRIBSZVoutInner.md) | Object Array representation of transaction outputs |
 **contract** | **string** | Represents the specific transaction contract. |
 **gas_limit** | **string** | Represents the amount of gas used by this specific transaction alone. |
 **gas_price** | [**\CryptoAPIs\Model\ListTransactionsByBlockHashRIBSBSCGasPrice**](ListTransactionsByBlockHashRIBSBSCGasPrice.md) |  |
@@ -22,9 +22,9 @@ Name | Type | Description | Notes
 **join_split_pub_key** | **string** | Represents an encoding of a JoinSplitSig public validating key. |
 **join_split_sig** | **string** | Is used to sign transactions that contain at least one JoinSplit description. |
 **overwintered** | **bool** | \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain. |
-**v_join_split** | [**\CryptoAPIs\Model\ListTransactionsByBlockHashRIBSZVJoinSplit[]**](ListTransactionsByBlockHashRIBSZVJoinSplit.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. |
-**v_shielded_output** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput[]**](GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions |
-**v_shielded_spend** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend[]**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions |
+**v_join_split** | [**\CryptoAPIs\Model\ListTransactionsByBlockHashRIBSZVJoinSplitInner[]**](ListTransactionsByBlockHashRIBSZVJoinSplitInner.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. |
+**v_shielded_output** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner[]**](GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner.md) | Object Array representation of transaction output descriptions |
+**v_shielded_spend** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner[]**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner.md) | Object Array representation of transaction spend descriptions |
 **value_balance** | **string** | Defines the transaction value balance. |
 **version_group_id** | **string** | Represents the transaction version group ID. |
 

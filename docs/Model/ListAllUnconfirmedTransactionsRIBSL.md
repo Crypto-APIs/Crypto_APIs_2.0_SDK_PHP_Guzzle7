@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **size** | **int** | Represents the total size of this transaction. |
 **v_size** | **int** | Represents the virtual size of this transaction. |
 **version** | **int** | Represents the transaction&#39;s version number. |
-**vin** | [**\CryptoAPIs\Model\ListAllUnconfirmedTransactionsRIBSLVin[]**](ListAllUnconfirmedTransactionsRIBSLVin.md) | Represents the transaction inputs. |
-**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSLVout[]**](GetTransactionDetailsByTransactionIDRIBSLVout.md) | Represents the transaction outputs. |
+**vin** | [**\CryptoAPIs\Model\ListAllUnconfirmedTransactionsRIBSLVinInner[]**](ListAllUnconfirmedTransactionsRIBSLVinInner.md) | Represents the transaction inputs. |
+**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSLVoutInner[]**](GetTransactionDetailsByTransactionIDRIBSLVoutInner.md) | Represents the transaction outputs. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

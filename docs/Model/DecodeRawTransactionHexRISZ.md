@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **value_balance** | **string** | Defines the transaction value balance. |
 **version** | **int** | Represents the transaction version number. |
 **version_group_id** | **string** | Represents the transaction version group ID |
-**vin** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVin[]**](DecodeRawTransactionHexRISZVin.md) | Represents the Inputs of the transaction |
-**vout** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVout[]**](DecodeRawTransactionHexRISZVout.md) | Represents the Inputs of the transaction |
+**vin** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVinInner[]**](DecodeRawTransactionHexRISZVinInner.md) | Represents the Inputs of the transaction |
+**vout** | [**\CryptoAPIs\Model\DecodeRawTransactionHexRISZVoutInner[]**](DecodeRawTransactionHexRISZVoutInner.md) | Represents the Inputs of the transaction |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
