@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **size** | **int** | Represents the total size of this transaction. |
 **version** | **int** | Represents transaction version number. |
 **vin** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner[]**](GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner.md) | Represents the transaction inputs. |
-**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDRIBSD2VoutInner[]**](GetTransactionDetailsByTransactionIDRIBSD2VoutInner.md) | Represents the transaction outputs. |
+**vout** | [**\CryptoAPIs\Model\GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner[]**](GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner.md) | Represents the transaction outputs. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
